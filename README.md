@@ -7,21 +7,21 @@ Get a recipe for each day of the week, we build a groceries list with all the in
 
 ##Contributors:
 
-Jeff Jeffreyyourman
-Frankie FrankBeatrice
-Angel angelica3010
-William williamavasquez
+>Jeff Jeffreyyourman
+>Frankie FrankBeatrice
+>Angel angelica3010
+>William williamavasquez
 
 
 ##Technologies used:
 
-HTML
-CSS
-BootStrap / Materialize / Skeleton Grid
-JavaScript
-jQuery
-AJAX
-Firebase
+>HTML
+>CSS
+>BootStrap / Materialize / Skeleton Grid
+>JavaScript
+>jQuery
+>AJAX
+>Firebase
 
 ###APIs
 
