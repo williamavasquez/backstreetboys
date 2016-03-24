@@ -1,10 +1,8 @@
-Name of you App/Project
+#7 Recipes (food for your week) 
 
+##Synopsis:
 
-Synopsis:
-
-Short Description of App. Why you chose the problem you're trying to solve. Pitch the idea in three to four sentences.
-
+Get a recipe for each day of the week, we build a groceries list with all the ingridients. choose what you have and don't. Go to the grocery store with the list in your pocket (todolist) or buy it all with one click at peadpod
 
 
 Contributors:
