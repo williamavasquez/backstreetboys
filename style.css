@@ -1,0 +1,128 @@
+#randomizedRecipes
+{
+	text-align: center;
+	padding: 5%;
+}
+
+.dropdownMenu
+{
+	margin-left: 5%;
+}
+/*down below is for time*/
+.timeBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.timeBtn:hover, .timeBtn:focus {
+    background-color: #3e8e41;
+}
+
+.timedropdown {
+    position: relative;
+    display: inline-block;
+    float: left;
+}
+
+.timedropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.timedropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.timedropdown a:hover {background-color: #f1f1f1}
+
+/*down below is for diet*/
+
+.dietBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dietBtn:hover, .dietBtn:focus {
+    background-color: #3e8e41;
+}
+
+.dietdropdown {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-left: 25%;
+}
+
+.dietdropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dietdropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dietdropdown a:hover {background-color: #f1f1f1}
+
+/*down below is for budget*/
+
+.budgetBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.budgetBtn:hover, .budgetBtn:focus {
+    background-color: #3e8e41;
+}
+
+.budgetdropdown {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-left: 25%;
+}
+
+.budgetdropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.budgetdropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.budgetdropdown a:hover {background-color: #f1f1f1}
+
