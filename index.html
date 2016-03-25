@@ -8,33 +8,37 @@
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+    <!-- CSS STYLE SHEET -->
+        <link rel="stylesheet" type="text/css" href="style.css">
     <!-- Firebase Reference -->
     <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
     <!-- Moment.js Reference -->
     <!-- <script src="http://momentjs.com/downloads/moment.js"></script> -->    
      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+     <!-- javascript script -->
+    <script src="game.js"></script>
 </head>
 <body>
 
 <!-- Employee Tracker -->
-<div class="container-fluid">
-
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
 
+<div class="container-fluid">
     <!-- Jumbotron -->
     <div class="jumbotron">
         <h1 class="text-center">7 recipe generator</h1>
@@ -47,10 +51,75 @@
                 <h3 class="panel-title"><strong>Random Recipes</strong></h3>
             </div>
             <div class="panel-body">
-                
+                <div class="dropdownMenu">
+                    <div class="timedropdown">
+                        <button onclick="myTimeFunction()" class="timeBtn">Time Restrictions</button>
+                            <div id="timemyDropdown" class="timedropdown-content">
+                                <a href="#home">time</a>
+                                <a href="#about">time</a>
+                                <a href="#contact">time</a>
+                            </div>
+                    </div>
+                    <div class="dietdropdown">
+                        <button onclick="myDietFunction()" class="dietBtn">Diet Restriction</button>
+                            <div id="dietmyDropdown" class="dietdropdown-content">
+                                <a href="#home">diet</a>
+                                <a href="#about">diet</a>
+                                <a href="#contact">diet</a>
+                            </div>
+                    </div>
+                    <div class="budgetdropdown">
+                        <button onclick="myBudgetFunction()" class="budgetBtn">Budget Restriction</button>
+                            <div id="budgetmyDropdown" class="budgetdropdown-content">
+                                <a href="#home">budget</a>
+                                <a href="#about">budget</a>
+                                <a href="#contact">budget</a>
+                            </div>
+                    </div>
+                </div>
+                <br>
+                <div id="randomizedRecipes">
+                    <img id='recipeSeven' src="images/food1.jpg">
+                    <img id='recipeSeven' src="images/food2.jpg">
+                    <img id='recipeSeven' src="images/food3.jpg">
+                    <img id='recipeSeven' src="images/food4.jpg">
+                    <img id='recipeSeven' src="images/food5.jpg">
+                    <img id='recipeSeven' src="images/food6.jpg">
+                    <img id='recipeSeven' src="images/food7.jpg">
+                    <br>
+                    <br>
+                    <button id='randomizeNewlistBtn'>Randomize</button>
+                    <button id='myNewListBtn'>Get me the list</button>
+                </div>
             </div>
+        </div>
+        <div id='moreInformation'>
+            <div id='twitterFeed'>
+                <p> fd afjhdsakl fdahslj fadklsf adlsds dsl fjklads hfjkldshfjkldsfl dsafldsfdsdfsalfa fadsf halskjds ah dlsa hjkldsah jkldsa hjkdsh jkldshf sdfl dskldsklfjdsahlf haksljf adklsjdjsla dlsh adjksl slda dsjhds a ds h</p>
+            </div> 
+            <div id='nonSense'>
+                <p id="coolKids">1. fd afjhdsakl fdahslj fadklsf <br><br> 2.adlsds dsl fjklads hfjkldshfjkldsfl <br><br> 3.dsafldsfdsdfsalfa fadsf halskjds ah dlsa hjkldsah <br><br> 4.jkldsa hjkdsh jkldshf sdfl dskldsklfjdsahlf <br><br> 5.haksljf adklsjdjsla dlsh adjksl slda dsjhds a ds h</p>
+            </div>  
+
         </div>
     </div>
 </div>
+    <!--
+    #footer
+    ========================== -->
+    <footer id="footer">
+        <div class="container">
+            <a href="https://www.github.com">
+            <img id='logo' src="images/githubLogo.png">
+            </a>
+            <a href="https://www.linkedin.com">
+            <img id='logo' src="images/linkedinLogo.png">
+            </a>
+            <a href="https://www.twitter.com">
+            <img id='logo' src="images/twitterLogo.png">
+            </a>
+            <p> We are 7 Recipes</p>
+        </div>
+    </footer>
 </body>
 </html>
