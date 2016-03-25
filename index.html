@@ -125,7 +125,8 @@
     <script type="text/javascript"> 
    
 
-   var jeff = "tomato";
+   var jeff = "yoGurt";
+   var jeff = jeff.toLowerCase();
    var will = "potato";
    // first check  -numbers were in the front
    var queryURL = "http://api.yummly.com/v1/api/recipes?_app_id=c921f5ae&_app_key=7ea32b0083cc69dd4df8f23facdb79f0&requirePictures=true&allowedIngredient[]="+jeff+"&allowedIngredient[]="+will;
@@ -172,17 +173,26 @@ var yummlyObject = response;
 
 
 //shows search results for recipes  
-var totalRecipeResults= yummlyObject.matches
-var saveRecipeResults = []
+var totalRecipeResults= yummlyObject.matches;
+var saveRecipeResults = [];
 
     for (var i=0; i<totalRecipeResults.length; i++) {
-    console.log(totalRecipeResults[i]);
-    
 
-    $("#coolKids").append(totalRecipeResults[i].id+"<br>"+"<br>"); 
+    console.log(totalRecipeResults[i]);
+
+    saveRecipeResults.push(totalRecipeResults[i]);
+    console.log(saveRecipeResults);
+    }
+
+var randomizedR = Math.floor(Math.random()*totalRecipeResults.length);
+console.log("this is the random number" + randomizedR);
+var SelectedR = totalRecipeResults[randomizedR];
+console.log(SelectedR);
+
+    $("#coolKids").append(SelectedR.id+"<br>"+"<br>"); 
 
 //write a formula that will limit the amount of recipe results and will only display teh recipe results that 
-//have 
+//have the requirement that wil h
 
 
 //use split formula to see if we can split the amount of specific ingedient number (ex: 2 cups), such as getting "2" and "cups"
@@ -193,7 +203,6 @@ var saveRecipeResults = []
 //read up about reference regex (regular expression) numbers only- check week4 (hangman game) checks variables that all of them are numbers
 
 
-    }
 
 });
 </script>
