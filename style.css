@@ -4,6 +4,51 @@
 	padding: 5%;
 }
 
+#myNewListBtn
+{
+    margin-left: 2%;
+}
+
+#moreInformation
+{
+    border: solid;
+    padding: 2%;
+    float: left;
+}
+
+#twitterFeed
+{
+    border: solid lightblue;
+    padding: 2%;
+    width: 20%;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    float: left;
+}
+
+#nonSense
+{   
+    border: solid;
+    float: left;
+    width: 15%;
+    padding: 2%;
+    margin-left: 10%;
+}
+
+#coolKids
+{
+    border: solid;
+    float: left;
+}
+
+#coolKidsTwo
+{
+    border: solid;
+    float: left;   
+}
+
+
 .dropdownMenu
 {
 	margin-left: 5%;
