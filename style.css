@@ -10,8 +10,8 @@
 }
 
 #moreInformation
-{
-    border: solid;
+{/*
+    border: solid;*/
     padding: 2%;
     float: left;
 }
@@ -21,7 +21,6 @@
     border: solid lightblue;
     padding: 2%;
     width: 20%;
-    margin-top: 1%;
     margin-left: 1%;
     margin-bottom: 1%;
     float: left;
@@ -29,7 +28,7 @@
 
 #nonSense
 {   
-    border: solid;
+    /*border: solid;*/
     float: left;
     width: 15%;
     padding: 2%;
@@ -38,14 +37,8 @@
 
 #coolKids
 {
-    border: solid;
+    /*border: solid;*/
     float: left;
-}
-
-#coolKidsTwo
-{
-    border: solid;
-    float: left;   
 }
 
 
@@ -170,4 +163,14 @@
 }
 
 .budgetdropdown a:hover {background-color: #f1f1f1}
+
+#footer
+{
+    background-color: lightblue;
+}
+
+.container
+{
+    text-align: center;
+}
 
