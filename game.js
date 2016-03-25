@@ -5,7 +5,7 @@ function myTimeFunction() {
 }
 
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
+window.onClick = function(event) {
   if (!event.target.matches('.timebtn')) {
 
     var dropdowns = document.getElementsByClassName("timedropdown-content");
@@ -23,7 +23,7 @@ function myDietFunction() {
     document.getElementById("dietmyDropdown").classList.toggle("show");
 }
 
-window.onclick = function(event) {
+window.onClick = function(event) {
   if (!event.target.matches('.dietbtn')) {
 
     var dropdowns = document.getElementsByClassName("dietdropdown-content");
@@ -41,7 +41,7 @@ function myBudgetFunction() {
     document.getElementById("budgetmyDropdown").classList.toggle("show");
 }
 
-window.onclick = function(event) {
+window.onClick = function(event) {
   if (!event.target.matches('.budgetBtn')) {
 
     var dropdowns = document.getElementsByClassName("budgetdropdown-content");
