@@ -1,5 +1,6 @@
 $(document).ready(function(){
   randomizedR = Math.floor(Math.random()*9);
+  console.log(randomizedR);
 
 	recipes = [];
 
@@ -11,11 +12,11 @@ $(document).ready(function(){
        async: false,
        contentType: "application/json",
        dataType: 'jsonp',
-      
-   }).done(function(response){
-   	console.log(response);
-   	test = response;
-   	test.hits[3].recipe.ingredients[2].quantity
+	  }).done(function(response){
+ 		   	console.log(response);
+		   	test = response;
+		   	randomRecipe = test.hits[randomizedR].recipe.ingredients[2].quantity;
+		  	console.log(randomRecipe);
    });
  
 

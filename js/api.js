@@ -2,10 +2,8 @@ $(document).ready(function(){
    
 recipes = [];
 JObject = [];
-    // generate a random number
-     // randomizedR = Math.floor(Math.random()*30);
 
-   var url = 'https://api.edamam.com/search?q=fish&app_id=82e33b19&app_key=ef430f166ba206b72620a9732916c7e6&to=5';
+   var url = 'https://api.edamam.com/search?q=chicken&app_id=82e33b19&app_key=ef430f166ba206b72620a9732916c7e6&to=10';
    $.ajax({
       type: 'GET',
        url: url,
@@ -28,8 +26,11 @@ JObject = [];
                    recipes.push(recipeSearchResults);
                     divRecipeImage = $("<div class='recipeContainer'><a class='fancybox fancybox.iframe' href='"+ recipeSearchResults.shareAs +"'><img class='recipeSearchResultsImage' src='"+ recipeSearchResults.image +"'></a><p class='recipeLabel'>"+ recipeSearchResults.label +"</p><p class='recipeSource'>"+ recipeSearchResults.source +"</p></div>");
                    $(".recipeSeven").append(divRecipeImage);   
-     // totalRecipeResults= JObject.hits;
-     // console.log(totalRecipeResults);
+     totalRecipeResults= JObject.hits;
+     console.log(totalRecipeResults);
+
+    // generate a random number
+     // randomizedR = Math.floor(Math.random()*totalRecipeResults.length);
 
     // select a random recipe from the API result  
      // SelectedR = totalRecipeResults[randomizedR];
