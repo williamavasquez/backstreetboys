@@ -13,11 +13,11 @@ $(document).ready(function(){
        contentType: "application/json",
        dataType: 'jsonp',
 	  }).done(function(response){
- 		   	console.log(response);
+  	   	console.log(response);
 		   	test = response;
 		   	randomRecipe = test.hits[randomizedR].recipe.ingredients[2].quantity;
 		  	console.log(randomRecipe);
-   });
+		   });
  
 
 });
