@@ -11,10 +11,13 @@
 </head>
 <body><script type="text/javascript"> 
    
-   //first check  -numbers were in the front
-   //var queryURL = "http://api.yummly.com/v1/api/recipe/Avocado-cream-pasta-sauce-recipe-306039?_app_id=c921f5ae&_app_key=7ea32b0083cc69dd4df8f23facdb79f0";
+   // first check  -numbers were in the front
+   var queryURL = "http://api.yummly.com/v1/api/recipes?_app_id=c921f5ae&_app_key=7ea32b0083cc69dd4df8f23facdb79f0&requirePictures=true&allowedIngredient[]=chicken&allowedIngredient[]=potato";
 
-   var queryURL = "http://api.yummly.com/v1/api/recipe/Brussel-Sprouts-with-Pancetta-and-Red-Wine-Vinaigrette-1557470?_app_id=c921f5ae&_app_key=7ea32b0083cc69dd4df8f23facdb79f0";
+   // var queryURL = "http://api.yummly.com/v1/api/recipe/Salad-For-Dinner-1537402?_app_id=c921f5ae&_app_key=7ea32b0083cc69dd4df8f23facdb79f0";
+
+   // building url
+   // "http://api.yummly.com/v1/api/recipe/Brussel-Sprouts-with-Pancetta-and-Red-Wine-Vinaigrette-1557470?_app_id=c921f5ae&_app_key=7ea32b0083cc69dd4df8f23facdb79f0";
 
    //second check - ingredient was first and then amount of ingrdient
   //http://www.yummly.com/recipe/recipe/Salad-For-Dinner-1537402?_app_id=c921f5
@@ -27,6 +30,10 @@
 
 //fifth check - this (amount of ingredient was in the front )
 //http://www.yummly.com/recipe/Brussel-Sprouts-with-Pancetta-and-Red-Wine-Vinaigrette-1557470
+
+
+// http://api.yummly.com/v1/api/recipes?_app_id=c921f5ae&_app_key=7ea32b0083cc69dd4df8f23facdb79f0&requirePictures=true&allowedIngredient[]=cheese&allowedIngredient[]=potato
+
 
 
    $.ajax({
@@ -46,14 +53,13 @@ var yummlyObject = response;
 //console.log(yummlyObject.ingredientLines[1]);
 
 
-//checks recipes for how many ingredients. Make a for loop for the entire recipe list	
-var ingredientsinrecipe= yummlyObject.ingredientLines
+//shows search results for recipes	
+var TotalRecepieResults= yummlyObject.matches
 
-	for (var i=0; i<ingredientsinrecipe.length; i++) {
+	for (var i=0; i<TotalRecepieResults.length; i++) {
+    console.log(TotalRecepieResults[i])
 
-
-
-console.log(ingredientsinrecipe[i])
+    // $("#coolKids").append(TotalRecepieResults[i].id); 
 
 
 //use split formula to see if we can split the amount of specific ingedient number (ex: 2 cups), such as getting "2" and "cups"
