@@ -41,35 +41,16 @@
     float: left;
 }
 
-/*#recipeSeven1
+.recipeSeven
 {
-    margin-left: 1%;
-}*/
-#recipeSeven2
-{
-    margin-left: 3%;  
-}
-#recipeSeven3
-{
-    margin-left: 3%;
-}
-#recipeSeven4
-{
-    margin-left: 3%;
-}
-#recipeSeven5
-{
-    margin-left: 3%;
-}
-#recipeSeven6
-{
-    margin-left: 3%;
-}
-#recipeSeven7
-{
-    margin-left: 3%;
+    width: 100px;
+    height: 200px;
 }
 
+.highlightImage
+{
+    border: solid 2px black;
+}
 .dropdownMenu
 {
 	margin-left: 5%;
