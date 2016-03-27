@@ -41,10 +41,12 @@
     float: left;
 }
 
-/*#recipeSeven1
+.recipeSeven
 {
-    margin-left: 1%;
-}*/
+ width: 120px;
+ height: 200px;
+ margin: 0 10px;
+}
 #recipeSeven2
 {
     margin-left: 3%;  
