@@ -40,16 +40,17 @@
     /*border: solid;*/
     float: left;
 }
-
+/*control over all the 7 recipe images*/
 .recipeSeven
 {
     width: 100px;
     height: 200px;
 }
-
+/*when you click the image this will activate*/
 .highlightImage
 {
-    border: solid 2px black;
+    opacity: 0.3;
+    border: dotted 4px purple;
 }
 .dropdownMenu
 {
