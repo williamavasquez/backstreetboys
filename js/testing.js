@@ -36,12 +36,12 @@ for (var i = 7 - 1; i >= 0; i--) {
       genRandomNumber = Math.floor(Math.random()*30);
         test = results;
         RecipeOne= test.hits[genRandomNumber].recipe;
-
+        
         recipesShown.push(test.hits[genRandomNumber]);
         console.log(RecipeOne.image);
         EXPR = "<img class='recipeSeven' src="+"'"+RecipeOne.image+"'>"; 
 
-        $('#randomizedRecipes').prepend(EXPR);
+        $('#image').prepend(EXPR);
 console.log(recipesShown);
       },
   });
