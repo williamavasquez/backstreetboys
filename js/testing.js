@@ -33,6 +33,7 @@ for (var i = 7 - 1; i >= 0; i--) {
         contentType: "application/json",
         dataType: 'jsonp',
       success: function(results) {
+        // for (var i = 7 - 1; i >= 0; i--) {
       genRandomNumber = Math.floor(Math.random()*30);
         test = results;
         RecipeOne= test.hits[genRandomNumber].recipe;
