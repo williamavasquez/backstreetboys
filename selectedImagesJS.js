@@ -1,6 +1,8 @@
+
 $(document).ready(function(){
-	$('#image').on('click', function(){
-		$("#myModal").modal('show');
+$(document).on('click', '.recipeSeven', function(){
+	
+		// $("#myModal").modal('show');
 		if ($(this).hasClass('highlightImage')){
 
 			$(this).removeClass('highlightImage');
@@ -11,9 +13,13 @@ $(document).ready(function(){
 			
 		}
 
-		});
+		
 
-	// $(".recipeSeven").click(function(){
+	});
+
+});
+
+// $(".recipeSeven").click(function(){
 	//         $("#myModal").modal();
 
 	        // $(document).bind('keyup', function(e) {
@@ -23,7 +29,9 @@ $(document).ready(function(){
 	        // });
 	    // });
 
-});
+
+
+
 
 
 
