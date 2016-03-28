@@ -81,9 +81,6 @@ $(document).ready(function(){
 
       //double check if hte api allows you to do multiple search queries in one string (such as vegan and paleo)
 
-  
-
-
 
 
             })
