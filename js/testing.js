@@ -1,8 +1,11 @@
 $(document).ready(function(){
-  randomizedR = Math.floor(Math.random()*9);
 	recipesShown = [];
+  meats=["beef","chicken","pork","salmon","tilapia","lamb", "turkey"];
+  genRandomNumber = Math.floor(Math.random()*meats.length);
+  console.log(meats[genRandomNumber]);
+  // meats=meats[genRandomNumber]
 
-   var url = 'https://api.edamam.com/search?q=beef&app_id=e370fe5f&app_key=5515518d09b2185298c869b4fd12db21&to=30';
+   var url = 'https://api.edamam.com/search?q='+meats[genRandomNumber]+'&app_id=e370fe5f&app_key=5515518d09b2185298c869b4fd12db21&to=30';
 
    // $.ajax({
    //    type: 'GET',
@@ -23,8 +26,7 @@ $(document).ready(function(){
    //      // get the ingredient object of a recipe
    //      // test.hits[randomizedR].recipe.ingredients[X].quantity
 
-for (var i = 7 - 1; i >= 0; i--) {
-  var test = {hits:["",""]};
+      var test = {hits:["",""]};
 
      $.ajax({
         type: 'GET',
@@ -33,7 +35,8 @@ for (var i = 7 - 1; i >= 0; i--) {
         contentType: "application/json",
         dataType: 'jsonp',
       success: function(results) {
-      genRandomNumber = Math.floor(Math.random()*30);
+      for (var i = 7 - 1; i >= 0; i--) {
+        genRandomNumber = Math.floor(Math.random()*30);
         test = results;
         RecipeOne= test.hits[genRandomNumber].recipe;
         
@@ -42,8 +45,9 @@ for (var i = 7 - 1; i >= 0; i--) {
         EXPR = "<img class='recipeSeven' src="+"'"+RecipeOne.image+"'>"; 
 
         $('#image').prepend(EXPR);
-console.log(recipesShown);
-      },
+        console.log(recipesShown);
+      };
+      }
   });
-};
+
 });
