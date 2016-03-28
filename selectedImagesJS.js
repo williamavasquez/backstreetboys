@@ -10,6 +10,9 @@ $(document).on('click', '.recipeSeven', function(){
 			
 		} else {
 			$(this).addClass('highlightImage');
+			$(this).attr('data-click', "clicked");
+			highlight = $(this).data('click');
+			console.log(highlight);
 			
 		}
 
