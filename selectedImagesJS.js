@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
-	$('.recipeSeven').on('click', function(){
+
+$(document).on('click', '.recipeSeven', function(){
+
 		// $("#myModal").modal('show');
 		if ($(this).hasClass('highlightImage')){
 
@@ -13,6 +15,8 @@ $(document).ready(function(){
 		}
 
 		});
+	});
+
 
 	// $(".recipeSeven").click(function(){
 	//         $("#myModal").modal();
@@ -24,7 +28,20 @@ $(document).ready(function(){
 	        // });
 	    // });
 
-});
+
+
+// $(".recipeSeven").click(function(){
+	//         $("#myModal").modal();
+
+	        // $(document).bind('keyup', function(e) {
+	        //     if (e.keyCode == 13){
+	        //         $("#myModal").modal('hide');
+	        //     }
+	        // });
+	    // });
+
+
+
 
 
 

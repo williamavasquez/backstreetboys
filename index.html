@@ -83,13 +83,49 @@
                 <br>
                 <!-- this is the 7 image section -->
                 <div id="randomizedRecipes">
-                    <img class='recipeSeven' src="images/food1.jpg">
-                    <img class='recipeSeven' src="images/food2.jpg">
-                    <img class='recipeSeven' src="images/food3.jpg">
-                    <img class='recipeSeven' src="images/food4.jpg">
-                    <img class='recipeSeven' src="images/food5.jpg">
-                    <img class='recipeSeven' src="images/food6.jpg">
-                    <img class='recipeSeven' src="images/food7.jpg">
+                    <!-- add divs here/ create 7 individual divs for each -->
+                
+                    <!-- <br> -->
+                    <div id="image">
+                        <!-- <div class='imagePlace'>
+                        </div> -->
+                        <h4 id='dayM'>Monday</h4>
+                    </div>
+                    <!-- <br> -->
+                    <div id="image">
+                        <!-- <div class='imagePlace'>
+                        </div> -->
+                        <h4 id='dayTu'>Tuesday</h4>
+                    </div>
+                    <!-- <br> -->
+                    <div id="image">
+                        <!-- <div class='imagePlace'>
+                        </div> -->
+                        <h4 id='dayW'>Wednesday</h4>
+                    </div>
+                    <!-- <br> -->
+                    <div id="image">
+                        <!-- <div class='imagePlace'>
+                        </div> -->
+                        <h4 id='dayTh'>Thursday</h4>
+                    </div>
+                    <!-- <br> -->
+                    <div id="image">
+                        <!-- <div class='imagePlace'>
+                        </div> -->
+                        <h4 id='dayF'>Friday</h4>
+                    </div>
+                    <!-- <br> -->
+                    <div id="image">
+                        <!-- <div class='imagePlace'>
+                        </div> -->
+                        <h4 id='daySa'>Saturday</h4>
+                    </div>
+                    <div id="image">
+                       <!--  <div class='imagePlace'>
+                        </div> -->
+                        <h4 id='daySu'>Sunday</h4>
+                    </div>
                     <br>
                     <br>
                     <button id='randomizeNewlistBtn'>Randomize</button>
@@ -120,14 +156,32 @@
 
             </div>
         </div>
-        <!-- bottom section including twitter feed and pictures --> 
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                            
+                              <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <p>Some text in the modal.</p>
+                                </div>
+                            <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                              
+            </div>
+        </div>             <!-- end of modal content -->
+        </div>
         <div id='moreInformation'>
             <!-- twitter feed -->
-            <div id='twitterFeed'>
-                <a class="twitter-timeline" href="https://twitter.com/RecipesSeven" data-widget-id="713759374565453824">Tweets by @RecipesSeven</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                <!-- end of twitter feed -->
-            </div> 
+                <div id='twitterFeed'>
+                    <a class="twitter-timeline" href="https://twitter.com/RecipesSeven" data-widget-id="713759374565453824">Tweets by @RecipesSeven</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            <!-- end of twitter feed -->
+                </div>
             <div id='nonSense'>
                 <p id="coolKids"></p>
             </div>  
@@ -152,5 +206,6 @@
             <p> We are 7 Recipes</p>
         </div>
     </footer>
+    <script src='js/testing.js'></script>
 </body>
 </html>

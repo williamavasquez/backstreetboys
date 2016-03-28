@@ -41,17 +41,58 @@
     float: left;
 }
 /*control over all the 7 recipe images*/
-.recipeSeven
-{
-    width: 100px;
-    height: 200px;
-}
-/*when you click the image this will activate*/
+
+
 .highlightImage
 {
-    opacity: 0.3;
-    border: dotted 4px purple;
+    opacity: .2;
+    border: dotted green 2px;
 }
+
+.recipeSeven
+{
+ width: 120px;
+ height: 200px;
+ margin: 0 10px;
+}
+
+
+#dayM
+{
+    float:left;
+    margin-left:5%;
+}
+#dayTu
+{
+    float:left;
+    margin-left:7%;
+}
+#dayW
+{
+    float:left;
+    margin-left:6%;
+}
+#dayTh
+{
+    float:left;
+    margin-left:5%;
+}
+#dayF
+{
+    float:left;
+    margin-left:7%;
+}
+#daySa
+{
+    float:left;
+    margin-left:8%;
+}
+#daySu
+{
+    float:left;
+    margin-left:7%;
+}
+
 .dropdownMenu
 {
 	margin-left: 5%;

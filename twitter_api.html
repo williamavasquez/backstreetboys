@@ -1,0 +1,54 @@
+<DOCTYPE!>
+<html>
+<head>
+	<title></title>
+
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+</head>
+
+
+<body><script type="text/javascript"> 
+   
+   // first check  -numbers were in the front
+   var queryURL = 'https://api.twitter.com/1.1/search/tweets.json?q=tweets&vertical=default&q=Recipes%20%20lang%3Aen&src=typd'
+  
+
+
+
+   $.ajax({
+            url: queryURL,
+            method: 'GET'
+        }) //this done function is getting the response back from ajax. Its storing (you can't see this yet) the value
+    //such as the Cat URL, or Dog URL. The images are now in teh response
+        .done(function(response) {
+//console.log willl console log the response object
+console.log(response);
+//make this variable to test the results of the ajax call to the twitter api
+var yummlyObject = response;
+//console.log(twitterObject.[1]);
+
+//shows search results for recipes	
+var twitterResults= twitterObject.matches
+	for (var i=0; i<twitterResults.length; i++) {
+    console.log(twitterResults[i])
+    
+//TO ADD ...WORK ON UPMOST IMPORTANCE
+    //Query
+
+//https://twitter.com/search?f
+//Query
+
+https://api.twitter.com/1.1/search/tweets.json?q=tweets&vertical=default&q=Recipes%20%20lang%3Aen&src=typd
+
+//Resource URL
+//https://api.twitter.com/1.1/search/tweets.json
+//Site to Check API Instructions...Twitter API Guide..Syntax Manuel 
+
+	}
+})
+</script>
+</body>
+</html>
+
+
