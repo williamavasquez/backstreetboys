@@ -1,10 +1,8 @@
 $(document).ready(function(){
-	recipesShown = [];
+  randomizedR = Math.floor(Math.random()*9);
 
-<<<<<<< HEAD
-   var url = 'https://api.edamam.com/search?q=beef&app_id=e370fe5f&app_key=5515518d09b2185298c869b4fd12db21&to=30';
+	recipes = [];
 
-<<<<<<< HEAD
    var url = 'https://api.edamam.com/search?q=vegetarian&app_id=82e33b19&app_key=ef430f166ba206b72620a9732916c7e6&to=9';
 
 
@@ -83,9 +81,6 @@ $(document).ready(function(){
 
       //double check if hte api allows you to do multiple search queries in one string (such as vegan and paleo)
 
-  
-
-
 
 
             })
@@ -99,76 +94,5 @@ $(document).ready(function(){
 
 
 
-
-=======
-   // $.ajax({
-   //    type: 'GET',
-   //     url: url,
-   //     async: false,
-   //     contentType: "application/json",
-   //     dataType: 'jsonp',
-	  // }).done(function(response){
-  	//    	console.log(response);
-		 //   	test = response;
-   //      RecipeOne= {
-   //         image: test.hits[randomizedR].recipe.image,
-   //         // label: test.hits[randomizedR].recipe.label,
-   //         // source: test.hits[randomizedR].recipe.source,
-   //         // shareAs: test.hits[randomizedR].recipe.shareAs,
-   //       };
-=======
-  veggies = ["Alfalfa sprouts","Artichoke","Arugula","Asparagus","Basil","Bean sprouts","bell pepper","Black beans","Black-eyed peas","Broad beans","Broccoli","Brussels sprouts","Butternut squash","Cabbage","Carrot","Carrots","Cauliflower","Celery","Chives","Collard greens","Corn","Daikon","Eggplant","Fennel","Frisee","garbanzo","Garlic","Ginger","Green beans","Habanero","Horseradish","Jalapeño","Kale","Kidney beans","Legumes","Lemon Grass","Lentils","lentils","Lettuce","lima beans","Marjoram","mushroom","Mustard greens","Nettles","spinach","Okra","Onion","Oregano","Paprika","Parsley","Parsnip","Peas","peppers","Pinto beans","Potato","Pumpkin","Radish","Shallot","Skirret","Soy beans","Spaghetti squash","Spinach","scallion","Sweet potato","Tabasco pepper","Tomato","Water chestnut","Watercress","yam","Zucchini"];
-
-  meats=["beef","chicken","pork","salmon","tilapia","lamb", "turkey"];
-  genRandomNumber = Math.floor(Math.random()*meats.length);
-  rMeat=meats[genRandomNumber];
-  rVeggie = veggies[Math.floor(Math.random()*veggies.length)];
-
-   var url = 'https://api.edamam.com/search?q='+rMeat+','+rVeggie+'&app_id=e370fe5f&app_key=5515518d09b2185298c869b4fd12db21&to=30';
-
-
-   // var url = 'https://api.edamam.com/search?q='+meats[genRandomNumber]+'q='+veggies[genRandomNumber]+'&app_id=e370fe5f&app_key=5515518d09b2185298c869b4fd12db21&to=30';
-
->>>>>>> origin
-   //      console.log(RecipeOne.image);
-   //      // get the ingredient object of a recipe
-   //      // test.hits[randomizedR].recipe.ingredients[X].quantity
-
-<<<<<<< HEAD
-for (var i = 7 - 1; i >= 0; i--) {
-  var test = {hits:["",""]};
->>>>>>> e3f0d041ad6d1b5b812cf214f1c39af33c40e90b
-=======
-      var test = {hits:["",""]};
->>>>>>> origin
-
-     $.ajax({
-        type: 'GET',
-        url: url,
-        async: false,
-        contentType: "application/json",
-        dataType: 'jsonp',
-      success: function(results) {
-        console.log(results);
-      for (var i = 7 - 1; i >= 0; i--) {
-        genRandomNumber = Math.floor(Math.random()*30);
-        test = results;
-        RecipeOne= test.hits[genRandomNumber].recipe;
-        
-        recipesShown.push(test.hits[genRandomNumber]);
-        console.log(RecipeOne.image);
-        EXPR = "<img class='recipeSeven' src="+"'"+RecipeOne.image+"'>"; 
-        RecipeName = RecipeOne.label;
-       
-        Rdiv = $('<div>').addClass("recipeBoxes");
-        RecipeName = $('<h2>').text(RecipeName);
-        Rdiv= Rdiv.append(RecipeName)
-        Rdiv= Rdiv.append(EXPR);
-
-        $('#image').prepend(Rdiv);
-        console.log(recipesShown);
-      };
-      }
-  });
 
 });
