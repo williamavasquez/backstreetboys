@@ -10,9 +10,6 @@ $(document).ready(function(){
 
    var url = 'https://api.edamam.com/search?q='+rMeat+','+rVeggie+'&app_id=e370fe5f&app_key=5515518d09b2185298c869b4fd12db21&to=30';
 
-
-   // var url = 'https://api.edamam.com/search?q='+meats[genRandomNumber]+'q='+veggies[genRandomNumber]+'&app_id=e370fe5f&app_key=5515518d09b2185298c869b4fd12db21&to=30';
-
    //      console.log(RecipeOne.image);
    //      // get the ingredient object of a recipe
    //      // test.hits[randomizedR].recipe.ingredients[X].quantity
@@ -22,14 +19,14 @@ $(document).ready(function(){
      $.ajax({
         type: 'GET',
         url: url,
-        async: false,
+        async: true,
         contentType: "application/json",
         dataType: 'jsonp',
       success: function(results) {
         console.log(results);
-      for (var i = 7 - 1; i >= 0; i--) {
-        genRandomNumber = Math.floor(Math.random()*30);
+      for (var i = 6; i >= 0; i--) {
         test = results;
+        genRandomNumber = Math.floor(Math.random()*results.hits.length);
         RecipeOne= test.hits[genRandomNumber].recipe;
         
         recipesShown.push(test.hits[genRandomNumber]);
