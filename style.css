@@ -41,33 +41,54 @@
     float: left;
 }
 
-/*#recipeSeven1
+.highlightImage
 {
-    margin-left: 1%;
-}*/
-#recipeSeven2
-{
-    margin-left: 3%;  
+    opacity: .2;
+    border: dotted green 2px;
 }
-#recipeSeven3
+
+.recipeSeven
 {
-    margin-left: 3%;
+ width: 120px;
+ height: 200px;
+ margin: 0 10px;
 }
-#recipeSeven4
+
+
+#dayM
 {
-    margin-left: 3%;
+    float:left;
+    margin-left:5%;
 }
-#recipeSeven5
+#dayTu
 {
-    margin-left: 3%;
+    float:left;
+    margin-left:7%;
 }
-#recipeSeven6
+#dayW
 {
-    margin-left: 3%;
+    float:left;
+    margin-left:6%;
 }
-#recipeSeven7
+#dayTh
 {
-    margin-left: 3%;
+    float:left;
+    margin-left:5%;
+}
+#dayF
+{
+    float:left;
+    margin-left:7%;
+}
+#daySa
+{
+    float:left;
+    margin-left:8%;
+}
+#daySu
+{
+    float:left;
+    margin-left:7%;
 }
 
 .dropdownMenu
