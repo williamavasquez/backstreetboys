@@ -53,32 +53,32 @@
             </div>
             <div class="panel-body">
                 <!-- drop down menu section -->
-                <div class="dropdownMenu">
-                    <div class="timedropdown">
-                        <button onclick="myTimeFunction()" class="timeBtn">Time Restrictions</button>
-                            <div id="timemyDropdown" class="timedropdown-content">
-                                <a href="#home">time</a>
-                                <a href="#about">time</a>
-                                <a href="#contact">time</a>
-                            </div>
-                    </div>
-                    <div class="dietdropdown">
-                        <button onclick="myDietFunction()" class="dietBtn">Diet Restriction</button>
-                            <div id="dietmyDropdown" class="dietdropdown-content">
-                                <a href="#home">diet</a>
-                                <a href="#about">diet</a>
-                                <a href="#contact">diet</a>
-                            </div>
-                    </div>
-                    <div class="budgetdropdown">
-                        <button onclick="myBudgetFunction()" class="budgetBtn">Budget Restriction</button>
-                            <div id="budgetmyDropdown" class="budgetdropdown-content">
-                                <a href="#home">budget</a>
-                                <a href="#about">budget</a>
-                                <a href="#contact">budget</a>
-                            </div>
-                    </div>
-                    <!-- end of drop down menu -->
+
+                <!-- redo drop down menu -->
+
+               <form id='formOne' name="myform"><div align="center"> 
+               <select name="optone" size="1" 
+               onchange="setOptions(document.myform.optone.options[document.myform.optone.selectedIndex].value);">
+               <!-- <option value=" " selected="selected"> </option>  -->
+               <option value="1" selected="selected" >Time Restrictions</option>  
+               </select><br /> <br /> 
+               <select name="opttwo" size="1"> 
+               <option value=" " selected="selected">Please select one of the options above first</option> 
+               </select> 
+               <input type="button" name="go" value="Submit"> 
+               </div></form>
+            
+               <form id='formTwo' name="myformtwo"><div align="center"> 
+               <select name="optoneanother" size="1" 
+               onchange="setOptions(document.myformtwo.optoneanother.options[document.myformtwo.optoneanother.selectedIndex].value);">
+               <!-- <option value=" " selected="selected"> </option>  -->
+               <option value="1" selected="selected" >Diet Restrictions</option>  
+               </select><br /> <br /> 
+               <select name="opttwoanother" size="1"> 
+               <option value=" " selected="selected">Please select one of the options above first</option> 
+               </select> 
+               <input type="button" name="go" value="Submit"> 
+               </div></form>
                 </div>
                 <br>
                 <!-- this is the 7 image section -->

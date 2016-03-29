@@ -1,56 +1,35 @@
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myTimeFunction() {
-    document.getElementById("timemyDropdown").classList.toggle("show");
-}
+function setOptions(chosen) 
+{ 
+var selbox = document.myform.opttwo; 
+selbox.options.length = 0; 
 
-// Close the dropdown if the user clicks outside of it
-window.onClick = function(event) {
-  if (!event.target.matches('.timebtn')) {
+if (chosen == "1") { 
+selbox.options[selbox.options.length] = new Option('','oneblank'); 
+selbox.options[selbox.options.length] = new Option('0-10 minutes','oneone'); 
+selbox.options[selbox.options.length] = new Option('10-20 minutes','onetwo');
+selbox.options[selbox.options.length] = new Option('20-30 minutes','onethree');
+selbox.options[selbox.options.length] = new Option('30-40 minutes','onefour');
+selbox.options[selbox.options.length] = new Option('40-50 minutes','onefive');
+selbox.options[selbox.options.length] = new Option('50-60 minutes','onesix');
+selbox.options[selbox.options.length] = new Option('60 minutes and more','oneseven'); 
+} 
 
-    var dropdowns = document.getElementsByClassName("timedropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+-->
+var selboxtwo = document.myformtwo.opttwoanother; 
+selboxtwo.options.length = 0; 
 
-function myDietFunction() {
-    document.getElementById("dietmyDropdown").classList.toggle("show");
-}
+if (chosen == "1") { 
+selboxtwo.options[selboxtwo.options.length] = new Option('','oneblankanother'); 
+selboxtwo.options[selboxtwo.options.length] = new Option('gluten','oneoneanother'); 
+selboxtwo.options[selboxtwo.options.length] = new Option('vegetarian','onetwoanother');
+selboxtwo.options[selboxtwo.options.length] = new Option('vegen','onethreeanother');
+selboxtwo.options[selboxtwo.options.length] = new Option('penut','onefouranother');
+selboxtwo.options[selboxtwo.options.length] = new Option('','onefiveanother');
+selboxtwo.options[selboxtwo.options.length] = new Option('','onesixanother');
+selboxtwo.options[selboxtwo.options.length] = new Option('','onesevenanother'); 
+} 
+}  
 
-window.onClick = function(event) {
-  if (!event.target.matches('.dietbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dietdropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
-function myBudgetFunction() {
-    document.getElementById("budgetmyDropdown").classList.toggle("show");
-}
-
-window.onClick = function(event) {
-  if (!event.target.matches('.budgetBtn')) {
-
-    var dropdowns = document.getElementsByClassName("budgetdropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+$(document).ready(function(){
+  setOptions(document.myform.optone.options[document.myform.optone.selectedIndex].value);
+});
