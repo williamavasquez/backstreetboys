@@ -53,10 +53,21 @@ $(document).ready(function(){
                     //tablespoon and teaspoon together. 
 
                     //make this statement true becuase you want the add respective ingredient and quantity  
+                    // === entirely has to match "0" = 0 this is incorrect vs 0== "0" thats still correct
 
+//if the food ingredient & the food measurement matches add this 
+
+//if this is true (i.e. matches)  the ingredients and  respecitve measurements match the (&& statement is comparing those 2 items). If this is true
+//if these 2 statements statements are true the comparison for the ands
                     if ((response.hits[i].recipe.ingredients[j].food == ingredientsArray[k].food) && (response.hits[i].recipe.ingredients[j].measure == ingredientsArray[k].measure)){
+                      
+
+//thenn add the  respecitive quanitties and  respective ingredient together
                       ingredientsArray[k].quantity = ingredientsArray[k].quantity + response.hits[i].recipe.ingredients[j].quantity;
                       added = true;
+                      
+//break is the same thing as else. It means stop
+
                       break;
 
                     //if the ingredients and quanitites don't match, still push it to the array to store it in there
@@ -83,13 +94,15 @@ $(document).ready(function(){
 
 
 
+
             })
 
               // console.log(ingredientsObject);
    // }); 
 
 
-//
+//make the template
+//What is the point of this app (5 slides max). Pavan gave us notes about what the put in the presentation
 
 
 
