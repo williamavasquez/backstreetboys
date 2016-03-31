@@ -43,7 +43,7 @@
 /*control over all the 7 recipe images*/
 
 
-.highlightImage
+.highlightRecipe
 {
     opacity: .2;
     border: dotted green 2px;
@@ -52,8 +52,8 @@
 .recipeSeven
 {
  width: 120px;
- height: 200px;
- margin: 0 10px;
+/* height: 200px;*/ 
+margin: 0 10px;
 }
 
 
@@ -115,3 +115,13 @@
     text-align: center;
 }
 
+h2 {
+    width: 120px;
+    font-size: 14px;
+    text-align: center;
+    margin:0 auto;
+}
+
+.recipeBoxes {
+    float: right;
+}
