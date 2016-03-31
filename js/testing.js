@@ -4,11 +4,11 @@ $(document).ready(function(){
 
   meats=["beef","chicken","pork","salmon","tilapia","lamb", "turkey","tofu","fish","duck", "steak"];
 
-recipesShown = [];
-
-     for (var i = 6; i >= 0; i--) {
+  recipesShown = [];
+    
+   for (var i = 6; i >= 0; i--) {
       randomRecipe();
-      }
+    }
 
   function randomRecipe(){
     SingleRecipe=[];
@@ -21,23 +21,42 @@ recipesShown = [];
     $.ajax({
         type: 'GET',
         url: url,
-        async: true,
+        async: false,
         contentType: "application/json",
         dataType: 'jsonp',
         success: function(results) {
           test = results;
-          console.log(test);
           RecipeOne= test.hits[0].recipe;
-          recipesShown.push(RecipeOne);
-          SingleRecipe.push(RecipeOne);
+          console.log(RecipeOne);
 
-    EXPR = "<img class='recipeSeven' src="+"'"+RecipeOne.image+"'>"; 
-    Rdiv = $('<div>').addClass("recipeBoxes");
-    RecipeName = $('<h2>').text(RecipeOne.label);
-    Rdiv= Rdiv.append(RecipeName)
-    Rdiv= Rdiv.append(EXPR);
-    $('#image').prepend(Rdiv);
-        }
-      });
+          recipesShown.push(RecipeOne);
+          SingleRecipe.push(RecipeOne);       
+       }
+
+      });//$.ajax({
   }
-});
+
+function checkRecipes(){
+if (recipesShown.length<7){
+  var counter = 7-recipesShown.length;
+    for (var i = 0; i <counter; i++){
+      randomRecipe()
+    }
+  } else {
+    console.log("appending to page");
+  for (var i = 0; i < 7; i++) {
+      RecipeOne=recipesShown[i];
+      console.log(RecipeOne);
+      EXPR = "<img class='recipeSeven' src="+"'"+RecipeOne.image+"'>"; 
+      Rdiv = $('<div>').addClass("recipeBoxes");
+      RecipeName = $('<h2>').text(RecipeOne.label);
+      Rdiv= Rdiv.append(RecipeName)
+      Rdiv= Rdiv.append(EXPR);
+      $('#image').prepend(Rdiv);
+      clearInterval(repeatRecipe);
+  }
+}
+};//function checkRecipes(){
+
+repeatRecipe = setInterval(checkRecipes,5000);
+}); //$(document).ready(function()
