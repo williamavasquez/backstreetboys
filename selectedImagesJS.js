@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-$(document).on('click', '.recipeSeven', function(){
+$(document).on('click', '.recipeBoxes', function(){
 	
 		// $("#myModal").modal('show');
 		if ($(this).hasClass('highlightImage')){
