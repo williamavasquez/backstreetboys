@@ -16,7 +16,7 @@ $(document).ready(function(){
     Rveggies = Math.floor(Math.random()*veggies.length);
     RRecipe = Math.floor(Math.random()*10)
 
-    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=e370fe5f&app_key=5515518d09b2185298c869b4fd12db21';
+    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=dae92dd5&app_key=44b98c657ab729481cd7aa24ff9c2f20';
 
     $.ajax({
         type: 'GET',
@@ -27,8 +27,6 @@ $(document).ready(function(){
         success: function(results) {
           test = results;
           RecipeOne= test.hits[0].recipe;
-          console.log(RecipeOne);
-
           recipesShown.push(RecipeOne);
           SingleRecipe.push(RecipeOne);       
        }
@@ -43,10 +41,8 @@ if (recipesShown.length<7){
       randomRecipe()
     }
   } else {
-    console.log("appending to page");
   for (var i = 0; i < 7; i++) {
       RecipeOne=recipesShown[i];
-      console.log(RecipeOne);
       EXPR = "<img class='recipeSeven' src="+"'"+RecipeOne.image+"'>"; 
       Rdiv = $('<div>').addClass("recipeBoxes");
       RecipeName = $('<h2>').text(RecipeOne.label);
