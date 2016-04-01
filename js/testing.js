@@ -23,65 +23,37 @@ $(document).ready(function(){
         async: false,
         contentType: "application/json",
         dataType: 'jsonp',
-
         success: function(results) {
           test = results;
-          console.log(results);
           RecipeOne= test.hits[0].recipe;
-          recipesShown[recipesShown.length]=RecipeOne;
-       },
+          recipesShown.push(RecipeOne);  
+       }
 
       });//$.ajax({
   }
 
 function checkRecipes(){
-
-
 if (recipesShown.length<7){
-    var counter = 7-recipesShown.length;
+  var counter = 7-recipesShown.length;
     for (var i = 0; i <counter; i++){
-      randomRecipe();
+      randomRecipe()
     }
-
   } else {
-    console.log("success");
       recipesShown.splice(7,100);
   for (var i = 0; i < 7; i++) {
-
-      EXPR = "<img class='recipeSeven' src="+"'"+recipesShown[i].image+"'>"; 
+      RecipeOne=recipesShown[i];
+      EXPR = "<img class='recipeSeven' src="+"'"+RecipeOne.image+"'>"; 
       Rdiv = $('<div>').addClass("recipeBoxes").attr("data-position",i);
-      RecipeName = $('<h2>').text(recipesShown[i].label);
+      RecipeName = $('<h2>').text(RecipeOne.label);
       Rdiv= Rdiv.append(EXPR);
       Rdiv= Rdiv.append(RecipeName)
-      $('#randomizedRecipes').prepend(Rdiv);
- }
-
-}
+      $('#image').prepend(Rdiv);
       clearInterval(repeatRecipe);
+  }
+}
 };//function checkRecipes(){
 
 repeatRecipe = setInterval(checkRecipes,5000);
-
-
-$(document).on('click', '.recipeBoxes', function(){
-
-    // $("#myModal").modal('show');
-    if ($(this).hasClass('highlightRecipe')){
-      
-
-      $(this).removeClass('highlightRecipe');
-      
-      
-    } else {
-      $(this).addClass('highlightRecipe');
-      $(this).attr('data-click', "clicked");
-
-      
-      highlight = $(this).data('click');
-      console.log(highlight);
-   }
-
-    });
 
 //================================================
 $('#randomizeNewlistBtn').click(function(){
@@ -106,5 +78,18 @@ $('.recipeBoxes').each(function(){
       recipesShown.splice((recipesShown.length-counter),1);
     };},3000)
 })
-}); //$(document).ready(function()
 
+
+$(document).on('click', '.recipeBoxes', function(){
+  
+    // $("#myModal").modal('show');
+    if ($(this).hasClass('highlightRecipe')){
+      $(this).removeClass('highlightRecipe');      
+    } else {
+      $(this).addClass('highlightRecipe');
+      $(this).attr('data-click', "clicked");
+      highlight = $(this).data('click');
+      console.log(highlight);
+    }
+  });
+}); //$(document).ready(function()
