@@ -11,7 +11,6 @@ $(document).ready(function(){
     }
 
   function randomRecipe(){
-    SingleRecipe=[];
     Rmeat = Math.floor(Math.random()*meats.length);
     Rveggies = Math.floor(Math.random()*veggies.length);
     RRecipe = Math.floor(Math.random()*10)
@@ -27,9 +26,7 @@ $(document).ready(function(){
         success: function(results) {
           test = results;
           RecipeOne= test.hits[0].recipe;
-          recipesShown.push(RecipeOne);
-          SingleRecipe.push(RecipeOne); 
-          console.log(SingleRecipe);      
+          recipesShown.push(RecipeOne);  
        }
 
       });//$.ajax({
@@ -42,6 +39,7 @@ if (recipesShown.length<7){
       randomRecipe()
     }
   } else {
+      recipesShown.splice(7,100);
   for (var i = 0; i < 7; i++) {
       RecipeOne=recipesShown[i];
       EXPR = "<img class='recipeSeven' src="+"'"+RecipeOne.image+"'>"; 
@@ -59,16 +57,26 @@ repeatRecipe = setInterval(checkRecipes,5000);
 
 //================================================
 $('#randomizeNewlistBtn').click(function(){
-  $('#randomizeNewlistBtn').empty();
-
+  // $('.recipeBoxes').empty();
+console.log(recipesShown);
   ReplaceArray=[];
+
 $('.recipeBoxes').each(function(){
   if($(this).data('click')=="clicked"){
-    ReplaceArray.push($(this).data('position'))
-    console.log(ReplaceArray);
+    var ClickedPostion = $(this).data('position');
+    console.log(ClickedPostion);
+    ReplaceArray.push(ClickedPostion)
+    recipesShown.splice(ClickedPostion,1)
+    console.log(recipesShown);
+    randomRecipe();
   }
-  
-})
+});
+  setTimeout(function(){
+    for (var i = 0; i < ReplaceArray.length; i++) {
+      var number = ReplaceArray[i];
+      recipesShown.splice(number,0,recipesShown[recipesShown.length]);
+      // recipesShown.splice((6-i),1);
+    };},2000)
 
 
   
@@ -87,19 +95,6 @@ $('.recipeBoxes').each(function(){
 
 // this will remember the position
 //recipesShown[highlightedRecipes[i].dataset.position]=null;
-
-
-
-// }
-
-// repeatRecipe = setInterval(checkRecipes,5000);
-
-//checkRecipes();
-
-
-console.log(recipesShown);
-
-
 
 
 })
