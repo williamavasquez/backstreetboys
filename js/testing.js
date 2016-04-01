@@ -13,9 +13,9 @@ $(document).ready(function(){
   function randomRecipe(){
     Rmeat = Math.floor(Math.random()*meats.length);
     Rveggies = Math.floor(Math.random()*veggies.length);
-    RRecipe = Math.floor(Math.random()*10)
+    RRecipe = Math.floor(Math.random()*20)
 
-    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=dae92dd5&app_key=44b98c657ab729481cd7aa24ff9c2f20';
+    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=52ebf3e8&app_key=97cc601259995e7caae8c06504a8df6b';
 
     $.ajax({
         type: 'GET',
@@ -57,32 +57,34 @@ repeatRecipe = setInterval(checkRecipes,5000);
 
 //================================================
 $('#randomizeNewlistBtn').click(function(){
-  // $('.recipeBoxes').empty();
-  ReplaceArray=[];
+  $('.recipeBoxes').empty();
 
 $('.recipeBoxes').each(function(){
   if($(this).data('click')=="clicked"){
     var ClickedPostion = $(this).data('position');
-    ReplaceArray.push(ClickedPostion)
     recipesShown.splice(ClickedPostion,1)
-    console.log(recipesShown);
     randomRecipe();
   }
 });
-  setTimeout(function(){
-      counter=1
-    for (var i = 0; i < ReplaceArray.length; i++) {
-      var number = ReplaceArray[i];
-      recipesShown.splice(number,0,recipesShown[recipesShown.length-i]);
-      console.log(recipesShown[recipesShown.length-(counter++)]);
-      recipesShown.splice((recipesShown.length-counter),1);
-    };},3000)
+
+repeatRecipe = setInterval(checkRecipes,5000);
+  // setTimeout(function(){
+  //     counter=1
+  //   for (var i = 0; i < ReplaceArray.length; i++) {
+  //     console.log(ReplaceArray);
+  //     var number = ReplaceArray[i];
+  //     var placer = recipesShown[recipesShown.length-counter]
+  //     console.log("this is the  last recipe=====" + placer.label);
+  //     console.log("this should be the same as ===" + recipesShown[number].label);
+  //     recipesShown.splice(number,0,placer);
+  //     // recipesShown.pop();
+  //     counter++;
+  //   };},3000)
 })
 
 
 $(document).on('click', '.recipeBoxes', function(){
-  
-    // $("#myModal").modal('show');
+
     if ($(this).hasClass('highlightRecipe')){
       $(this).removeClass('highlightRecipe');      
     } else {
