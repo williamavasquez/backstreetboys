@@ -58,13 +58,11 @@ repeatRecipe = setInterval(checkRecipes,5000);
 //================================================
 $('#randomizeNewlistBtn').click(function(){
   // $('.recipeBoxes').empty();
-console.log(recipesShown);
   ReplaceArray=[];
 
 $('.recipeBoxes').each(function(){
   if($(this).data('click')=="clicked"){
     var ClickedPostion = $(this).data('position');
-    console.log(ClickedPostion);
     ReplaceArray.push(ClickedPostion)
     recipesShown.splice(ClickedPostion,1)
     console.log(recipesShown);
@@ -72,30 +70,12 @@ $('.recipeBoxes').each(function(){
   }
 });
   setTimeout(function(){
+      counter=1
     for (var i = 0; i < ReplaceArray.length; i++) {
       var number = ReplaceArray[i];
-      recipesShown.splice(number,0,recipesShown[recipesShown.length]);
-      // recipesShown.splice((6-i),1);
-    };},2000)
-
-
-  
-// var highlightedRecipes=$( ".highlightRecipe" )
-// $( ".recipeBoxes" ).remove();
-//   console.log(highlightedRecipes);
-//  for(i=0;i<highlightedRecipes.length;i++){
-// var positiontoPush = $('.highlightedRecipes').data("position");
-// positionArray.push(positiontoPush);
-// console.log(positionArray)
-
-
-
-// this will forget the position
-// recipesShown.splice(highlightedRecipes[i].dataset.position,1);
-
-// this will remember the position
-//recipesShown[highlightedRecipes[i].dataset.position]=null;
-
-
+      recipesShown.splice(number,0,recipesShown[recipesShown.length-i]);
+      console.log(recipesShown[recipesShown.length-(counter++)]);
+      recipesShown.splice((recipesShown.length-counter),1);
+    };},3000)
 })
 }); //$(document).ready(function()
