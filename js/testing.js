@@ -11,12 +11,11 @@ $(document).ready(function(){
     }
 
   function randomRecipe(){
-    SingleRecipe=[];
     Rmeat = Math.floor(Math.random()*meats.length);
     Rveggies = Math.floor(Math.random()*veggies.length);
     RRecipe = Math.floor(Math.random()*10)
 
-    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=e370fe5f&app_key=5515518d09b2185298c869b4fd12db21';
+    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=dae92dd5&app_key=44b98c657ab729481cd7aa24ff9c2f20';
 
     $.ajax({
         type: 'GET',
@@ -29,152 +28,40 @@ $(document).ready(function(){
           test = results;
           console.log(results);
           RecipeOne= test.hits[0].recipe;
-          console.log(RecipeOne);
-
-
           recipesShown[recipesShown.length]=RecipeOne;
-//          SingleRecipe[SingleRecipe.length]=RecipeOne;       
        },
-       error: function(jqXHR, exception){
-
-        console.log("we got an error " + exception);
-        console.log(jqXHR);
-        
-       }
 
       });//$.ajax({
   }
-
-  function getRecipe(inPosition){
-
-    var positionToReplace=inPosition;
-
-    Rmeat = Math.floor(Math.random()*meats.length);
-    Rveggies = Math.floor(Math.random()*veggies.length);
-    RRecipe = Math.floor(Math.random()*10)
-
-    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=e370fe5f&app_key=5515518d09b2185298c869b4fd12db21';
-
-    $.ajax({
-        type: 'GET',
-        url: url,
-        async: false,
-        contentType: "application/json",
-        dataType: 'jsonp',
-
-        success: function(results) {
-
-
-          if(!test.hits[0].recipe){
-          console.log("I didn't find one");
-              getRecipe();
-            }else{
-          console.log("I got a recipe to put into postion "+positionToReplace);
-              test = results;
-              RecipeOne= test.hits[0].recipe;
-              console.log(RecipeOne);
-              recipesShown[positionToReplace]=RecipeOne;
-
-
-            }
-       }
-
-      });//$.ajax({
-  }
-
-
-// function realignRecipes(){
-
-//   for(j=0;j<recipesShown.length;j++){
-
-//       if(recipesShown[i]==null){
-//         getRecipe(j);
-//       }
-
-//   }
-
-// }
 
 function checkRecipes(){
 
 
 if (recipesShown.length<7){
-
-
     var counter = 7-recipesShown.length;
     for (var i = 0; i <counter; i++){
       randomRecipe();
     }
 
-
-
-} else {
-    /// we have 7
-    console.log("appending to page");
+  } else {
+    console.log("success");
+      recipesShown.splice(7,100);
   for (var i = 0; i < 7; i++) {
 
-if(recipesShown[i]!=null){
-
-      RecipeOne=recipesShown[i];
-//      console.log(RecipeOne);
-      EXPR = "<img class='recipeSeven' src="+"'"+RecipeOne.image+"'>"; 
-      Rdiv = $('<div>').addClass("recipeBoxes").attr('data-position', i);
-
-      RecipeName = $('<h2>').text(RecipeOne.label);
-
+      EXPR = "<img class='recipeSeven' src="+"'"+recipesShown[i].image+"'>"; 
+      Rdiv = $('<div>').addClass("recipeBoxes").attr("data-position",i);
+      RecipeName = $('<h2>').text(recipesShown[i].label);
       Rdiv= Rdiv.append(EXPR);
-      $('#image').prepend(Rdiv);
       Rdiv= Rdiv.append(RecipeName)
+      $('#randomizedRecipes').prepend(Rdiv);
  }
 
-
-
 }
-
-
       clearInterval(repeatRecipe);
-}
 };//function checkRecipes(){
 
 repeatRecipe = setInterval(checkRecipes,5000);
 
-
-$('#randomizeNewlistBtn').click(function(){
-
-
-var highlightedRecipes=$( ".highlightRecipe" )
-$( ".recipeBoxes" ).remove();
-
-//console.log($( ".highlightRecipe" ));
-console.log(recipesShown);
-
-// console.log($(this))
- for(i=0;i<highlightedRecipes.length;i++){
-
-
-// this will forget the position
-recipesShown.splice(highlightedRecipes[i].dataset.position,1);
-
-// this will remember the position
-//recipesShown[highlightedRecipes[i].dataset.position]=null;
-
-
-
-}
-
-realignRecipes();
-
-repeatRecipe = setInterval(checkRecipes,5000);
-
-//checkRecipes();
-
-
-console.log(recipesShown);
-
-
-
-
-})
 
 $(document).on('click', '.recipeBoxes', function(){
 
@@ -192,37 +79,32 @@ $(document).on('click', '.recipeBoxes', function(){
       
       highlight = $(this).data('click');
       console.log(highlight);
-
-
-      
-    }
+   }
 
     });
 
+//================================================
+$('#randomizeNewlistBtn').click(function(){
+  // $('.recipeBoxes').empty();
+  ReplaceArray=[];
 
-
-
-
+$('.recipeBoxes').each(function(){
+  if($(this).data('click')=="clicked"){
+    var ClickedPostion = $(this).data('position');
+    ReplaceArray.push(ClickedPostion)
+    recipesShown.splice(ClickedPostion,1)
+    console.log(recipesShown);
+    randomRecipe();
+  }
+});
+  setTimeout(function(){
+      counter=1
+    for (var i = 0; i < ReplaceArray.length; i++) {
+      var number = ReplaceArray[i];
+      recipesShown.splice(number,0,recipesShown[recipesShown.length-i]);
+      console.log(recipesShown[recipesShown.length-(counter++)]);
+      recipesShown.splice((recipesShown.length-counter),1);
+    };},3000)
+})
 }); //$(document).ready(function()
-
-// ========================================================
-// ========================================================
-
-
-//everytime you click
-
-// $('#randomizeNewlistBtn').on('click', function(){
-//   alert('shalom');
-//   //run a loop to check to see if the data attribute is clicked
-//   //if data attribute ('click') is clicked
-//   //run the randomizer function
-//   for (var i = 0; i <  i++) {
-//     console.log(randomRecipe());
-//   }
-
-// }};
-
-
-
-
 
