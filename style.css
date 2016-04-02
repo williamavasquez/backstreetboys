@@ -1,3 +1,16 @@
+
+.IngDiv {
+   float: left;
+   /*background-color: white;*/
+}
+
+#ingredient
+{
+    height:175px;
+    width:100%;
+    background-color: white;
+}
+
 #randomizedRecipes
 {
 	text-align: center;
@@ -14,7 +27,7 @@ head
 }
 #footer
 {
-    background-color: white;
+    background-color: black;
   
 }
 
@@ -42,9 +55,20 @@ head
 {
     margin-left: 2%;
 }
+
+/*input[type=checkbox]
+{
+    float: left;
+}*/
 #twitterFeed
 {
     width: 12%;
+    float: left;
+}
+#twitterFeedTwo
+{
+    width: 12%;
+    margin-left: 10%;
     float: left;
 }
 
@@ -100,7 +124,6 @@ margin: 0 10px;
 .container
 {
     text-align: center;
-
 }
 
 h2 {

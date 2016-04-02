@@ -17,7 +17,7 @@ $(document).ready(function(){
     RRecipe = Math.floor(Math.random()*20)
 
 
-    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=0a0edc33&app_key=6090a8571c44c351bd3f1344244e9861';
+    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=7ecbc2f5&app_key=ec155c4de5c9f1cbd730efdb25ad34df';
 
 
     $.ajax({
@@ -118,26 +118,42 @@ $('#myNewListBtn').on('click', function(){
       }
       console.log(ingredientsArray)
     for (var i = 0; i < ingredientsArray.length; i++) {
-      $('#ingredient').append('<input type="checkbox" name="Grocery" value="'+ingredientsArray[i].food+'">'+ ingredientsArray[i].quantity+" "+ingredientsArray[i].measure+" : "+ingredientsArray[i].food+ '<br>');
-    }
+         var newDiv = $('<div>').addClass("IngDiv");
+         var ingredientDiv = ('<input type="checkbox" name="Grocery" value="'+ingredientsArray[i].food+'">'+ ingredientsArray[i].quantity+" "+ingredientsArray[i].measure+" : "+ingredientsArray[i].food+ '<br>' + " ");
+         newDiv.append(ingredientDiv);
+         $('#ingredient').append(newDiv);
+
+       }
   });
-
-
-haveitems=[];
-dontHaveItems=[];
 
 $('#submitWunderlist').on('click', function(){
 
  $('input[type=checkbox]').each(function(){
 
    if($(this).prop( "checked" )){
-    $('#getMeTheList').append($(this));
      console.log("Checked");
    }else{
      console.log("Not checked");
  }//else
 }); 
 });//$('#subm
+
+
+haveitems=[];
+dontHaveItems=[];
+
+// $('#submitWunderlist').on('click', function(){
+
+//  $('input[type=checkbox]').each(function(){
+
+//    if($(this).prop( "checked" )){
+//     $('#getMeTheList').append($(this));
+//      console.log("Checked");
+//    }else{
+//      console.log("Not checked");
+//  }//else
+// }); 
+// });//$('#subm
 }); //$(document).ready(function()
 
 // }); //$(document).ready(function()
@@ -175,7 +191,7 @@ var opts = {
 , fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
 , zIndex: 2e9 // The z-index (defaults to 2000000000)
 , className: 'spinner' // The CSS class to assign to the spinner
-, top: '67%' // Top position relative to parent
+, top: '55%' // Top position relative to parent
 , left: '50%' // Left position relative to parent
 , shadow: false // Whether to render a shadow
 , hwaccel: false // Whether to use hardware acceleration
