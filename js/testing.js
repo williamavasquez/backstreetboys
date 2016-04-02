@@ -16,7 +16,7 @@ $(document).ready(function(){
     Rveggies = Math.floor(Math.random()*veggies.length);
     RRecipe = Math.floor(Math.random()*20)
 
-    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=52ebf3e8&app_key=97cc601259995e7caae8c06504a8df6b';
+    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=0a0edc33&app_key=6090a8571c44c351bd3f1344244e9861';
 
     $.ajax({
         type: 'GET',
@@ -87,7 +87,6 @@ $(document).on('click', '.recipeBoxes', function(){
 $('#myNewListBtn').on('click', function(){
 
       for (var i = 0; i < recipesShown.length; i++){
-
         for (var j = 0; j < recipesShown[i].ingredients.length; j++){
 
             var foodObj= {
@@ -115,14 +114,23 @@ $('#myNewListBtn').on('click', function(){
         }
       }
       console.log(ingredientsArray)
-      //NEXT STEPS make the front end part to pass the search queries for the diet restrictions, 
-
+    for (var i = 0; i < ingredientsArray.length; i++) {
+      $('#ingredient').append('<input type="checkbox" name="Grocery" value="'+ingredientsArray[i].food+'">'+ ingredientsArray[i].quantity+" "+ingredientsArray[i].measure+" : "+ingredientsArray[i].food+ '<br>');
+    }
   });
 
-for (var i = 0; i < ingredientsArray.length; i++) {
-      $('ingredient').append('<h2>' + ingredientsArray[i].quantity+" "+ingredientsArray[i].measure+" : "+ingredientsArray[i].food+ '</h2>' '<br>');
-      for (var j = 0; j < questions[i].answers.length; j++) {
-        $('ingredient').append('<input type="radio" name="question' + '-' + i + '" value="' + questions[i].answers[j] + '">' + questions[i].answers[j]);
-      }
-    }
+haveitems=[];
+dontHaveItems=[];
+
+$('#submitWunderlist').on('click', function(){
+
+  $('input[type=checkbox]').each(function(){
+    if ($('input[type=checkbox]').is(':checked')){
+      console.log("checked");
+    console.log($(this).val());
+    }else{
+    console.log("nothing clicked")
+  }//else
+}); 
+});//$('#submitWunderlist').on('click', function(){
 }); //$(document).ready(function()
