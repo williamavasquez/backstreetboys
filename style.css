@@ -23,6 +23,7 @@ button
 {
 	text-align: center;
 	padding: 5%;
+    margin-left: 2%;
 }
 body
 {
@@ -132,5 +133,6 @@ h2 {
 }
 
 .recipeBoxes {
-    float: right;
+    float: left;
+
 }
