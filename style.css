@@ -65,20 +65,11 @@ head
     margin-left: 2%;
 }
 
-/*input[type=checkbox]
-{
-    float: left;
-}*/
+
 #twitterFeed
 {
-    width: 12%;
     float: left;
-}
-#twitterFeedTwo
-{
-    width: 12%;
-    margin-left: 10%;
-    float: left;
+
 }
 
 
@@ -87,23 +78,9 @@ head
     border: solid;*/
     padding: 2%;
     float: left;
+    margin-left: 6%;
 }
 
-#nonSense
-{   
-    /*border: solid;*/
-    float: left;
-    width: 15%;
-    padding: 2%;
-    margin-left: 10%;
-}
-
-#coolKids
-{
-    /*border: solid;*/
-    float: left;
-}
-/*control over all the 7 recipe images*/
 
 
 .highlightRecipe
@@ -136,3 +113,5 @@ h2 {
     float: left;
 
 }
+
+
