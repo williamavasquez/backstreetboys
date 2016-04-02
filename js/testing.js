@@ -12,7 +12,7 @@ $(document).ready(function(){
     Rmeat = Math.floor(Math.random()*meats.length);
     Rveggies = Math.floor(Math.random()*veggies.length);
     RRecipe = Math.floor(Math.random()*20)
-    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=c087d9bf&app_key=6a40561f74f815bf63c05fb343000b4c';
+    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=abeeea83&app_key=fc9d96f2dc8b93fb29865ddb3d5179ec';
     $.ajax({
         type: 'GET',
         url: url,
