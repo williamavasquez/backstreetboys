@@ -17,7 +17,7 @@ $(document).ready(function(){
     RRecipe = Math.floor(Math.random()*20)
 
 
-    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=7ecbc2f5&app_key=ec155c4de5c9f1cbd730efdb25ad34df';
+    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=7bf85bba&app_key=792d7df832b1f3997bded95231dd875e';
 
 
     $.ajax({
@@ -119,7 +119,7 @@ $('#myNewListBtn').on('click', function(){
       console.log(ingredientsArray)
     for (var i = 0; i < ingredientsArray.length; i++) {
          var newDiv = $('<div>').addClass("IngDiv");
-         var ingredientDiv = ('<input type="checkbox" name="Grocery" value="'+ingredientsArray[i].food+'">'+ ingredientsArray[i].quantity+" "+ingredientsArray[i].measure+" : "+ingredientsArray[i].food+ '<br>' + " ");
+         var ingredientDiv = ('<input type="checkbox" name="Grocery" value="'+ingredientsArray[i].food+'">'+ ingredientsArray[i].quantity+" "+ingredientsArray[i].measure+": "+ingredientsArray[i].food+ '<br>' + " ").toUpperCase();
          newDiv.append(ingredientDiv);
          $('#ingredient').append(newDiv);
 
@@ -175,6 +175,8 @@ dontHaveItems=[];
 
 // spinner.js spin the spinning spinner spun span spong //
 console.log("spin span spun");
+
+
 var opts = {
   lines: 13 // The number of lines to draw
 , length: 28 // The length of each line

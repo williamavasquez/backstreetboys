@@ -1,22 +1,18 @@
 
 .IngDiv {
-   float: left;
+   /*float: left;*/
    /*background-color: white;*/
-   margin-left:2.5%;
-   margin-right:2.5%;
+ /*  margin-left:2.5%;
+   margin-right:2.5%;*/
+   color: black;
 }
 
 #ingredient
 {
-    height: 175px;
-    width: 96%;
+    height: 1000px;
+    width: 20%;
     background-color: white;
     margin-left: 2%;
-}
-
-button
-{
-    color: black;
 }
 
 #randomizedRecipes
@@ -61,48 +57,14 @@ head
 
 #myNewListBtn
 {
-    margin-left: 2%;
+    margin-left: 38%;
 }
 
 /*input[type=checkbox]
 {
     float: left;
 }*/
-#twitterFeed
-{
-    width: 12%;
-    float: left;
-}
-#twitterFeedTwo
-{
-    width: 12%;
-    margin-left: 10%;
-    float: left;
-}
 
-
-#moreInformation
-{/*
-    border: solid;*/
-    padding: 2%;
-    float: left;
-}
-
-#nonSense
-{   
-    /*border: solid;*/
-    float: left;
-    width: 15%;
-    padding: 2%;
-    margin-left: 10%;
-}
-
-#coolKids
-{
-    /*border: solid;*/
-    float: left;
-}
-/*control over all the 7 recipe images*/
 
 
 .highlightRecipe
@@ -117,13 +79,6 @@ head
 /* height: 200px;*/ 
 margin: 0 10px;
 }
-
-
-.container
-{
-    text-align: center;
-}
-
 h2 {
     width: 120px;
     font-size: 14px;
@@ -131,6 +86,3 @@ h2 {
     margin:0 auto;
 }
 
-.recipeBoxes {
-    float: right;
-}
