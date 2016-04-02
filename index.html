@@ -13,7 +13,8 @@
     <!-- Firebase Reference -->
     <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
-    <!-- Moment.js Reference -->
+    <!-- Spinner.js Reference -->
+    <script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
     <!-- <script src="http://momentjs.com/downloads/moment.js"></script> -->    
      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
@@ -22,33 +23,19 @@
 </head>
 <body>
 
-<!-- Employee Tracker -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
-    </nav>
+
 
 <div class="container-fluid">
     <!-- Jumbotron -->
     <div class="jumbotron">
-        <h1 class="text-center">7 recipe generator</h1>
-        <h3 class="text-center">A Comprehensive Directory of recipe generator</h3>
+        <h1 class="text-center">7 Recipes</h1>
+        <h3 class="text-center">Easy Meal Planning for the Week</h3>
     </div>
     
     <div class="container">
         <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong>Random Recipes</strong></h3>
+            <div style="background-color: #eee;" class="panel-heading">
+                <h3 class="panel-title"><strong>Find Your Recipe</strong></h3>
             </div>
             <div class="panel-body">
                 <!-- drop down menu section -->
@@ -79,6 +66,11 @@
                <!-- <input type="button" name="go" value="Submit">  -->
                </div></form>
                 </div>
+                <br>
+                <div id="myProgress">
+                  
+                </div>
+
                 <br>
                 <!-- this is the 7 image section -->
                 <div id="randomizedRecipes">

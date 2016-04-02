@@ -3,6 +3,28 @@
 	text-align: center;
 	padding: 5%;
 }
+body
+{
+    background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSuCI5mqUvj55ZaQE9hb7Pdi1McETN4CZMm9HFsdzvOyDxRi1JH');
+}
+head
+{
+
+}
+#footer
+{
+
+}
+
+.panel-title
+{
+    color: black;
+}
+.jumbotron
+{
+    margin-top: 4%;
+
+}
 
 #myNewListBtn
 {
