@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('#enjoy').hide();
   ingredientsArray = [];
 
   veggies = ["Alfalfa sprouts","Artichoke","Arugula","Asparagus","Basil","Bean sprouts","bell pepper","Black beans","Black-eyed peas","Broad beans","Broccoli","Brussels sprouts","Butternut squash","Cabbage","Carrot","Carrots","Cauliflower","Celery","Chives","Collard greens","Corn","Daikon","Eggplant","garbanzo","Garlic","Ginger","Green beans","Habanero","Horseradish","Jalapeño","Kale","Kidney beans","Legumes","Lemon Grass","Lentils","lentils","Lettuce","lima beans","Marjoram","mushroom","Mustard greens","Nettles","spinach","Okra","Onion","Oregano","Paprika","Parsley","Parsnip","Peas","peppers","Pinto beans","Potato","Pumpkin","Radish","Shallot","Skirret","Soy beans","Spaghetti squash","Spinach","scallion","Sweet potato","Tabasco pepper","Tomato","Water chestnut","Watercress","yam","Zucchini"];
@@ -17,7 +18,7 @@ $(document).ready(function(){
     RRecipe = Math.floor(Math.random()*20)
 
 
-    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=7bf85bba&app_key=792d7df832b1f3997bded95231dd875e';
+    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=c087d9bf&app_key=6a40561f74f815bf63c05fb343000b4c';
 
 
     $.ajax({
@@ -118,12 +119,13 @@ $('#myNewListBtn').on('click', function(){
       }
       console.log(ingredientsArray)
     for (var i = 0; i < ingredientsArray.length; i++) {
-         var newDiv = $('<div>').addClass("IngDiv");
-         var ingredientDiv = ('<input type="checkbox" name="Grocery" value= "'+ingredientsArray[i].food+'"> ' + ingredientsArray[i].quantity +" "+ingredientsArray[i].measure+": "+ingredientsArray[i].food + '<br>' + '<br>' + " ").toUpperCase();
-         newDiv.append(ingredientDiv);
-         $('#ingredient').append(newDiv);
 
-       }
+        var newDiv = $('<div>').addClass("IngDiv");
+        var ingredientDiv = ('<input type="checkbox" name="Grocery" value="'+ingredientsArray[i].quantity +" "+ingredientsArray[i].measure+" "+ingredientsArray[i].food+'">' + ingredientsArray[i].quantity +" "+ingredientsArray[i].measure+": "+ingredientsArray[i].food + '<br>' + '<br>' + " ").toUpperCase();
+        newDiv.append(ingredientDiv);
+        $('#ingredient').append(newDiv);
+
+      }
   });
 
 $('#submitWunderlist').on('click', function(){
@@ -202,7 +204,35 @@ var opts = {
 var target = document.getElementById('myProgress');
 var spinner = new Spinner(opts).spin(target);
 
+
+$('#submitWunderlist').on('click', function(){
+  $('#ingredient').hide();
+  $('#enjoy').show();
+ $('input[type=checkbox]').each(function(){
+
+   if($(this).prop( "checked" )){
+     haveitems.push($(this).val());
+     text = $(this).val();
+     postURL = 'https://todoist.com/API/addItem?content='+text+'&project_id=154958188&priority=1&token=6ed67f409c850e92ac0ed6f7e25758f23f553553'
+     $.ajax({
+         type: 'GET',
+         url: postURL,
+         dataType: 'json  ',
+         // headers: { Access-Control-Allow-Origin:*, withCredentials: false},
+         success: function(results) {
+        }
+       });//$.ajax({
+   }else{
+     dontHaveItems.push($(this).val());
+     
+     
+   }//else
+
+}); 
+});//$('#submitWunderlist').on('click', function(){
+
 // // no more spinning, i'm going to throw up
 // setTimeout(function(){
 //   spinner.stop()}, 12000);
+
 

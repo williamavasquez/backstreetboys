@@ -7,6 +7,20 @@
    color: black;
 }
 
+#giffy
+{
+     width: 500px;
+     margin: 0 auto;
+}
+
+#enjoy
+{
+    width: 100%;
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+
 #ingredient
 {
     height: 1000px;
