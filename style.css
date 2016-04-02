@@ -30,21 +30,26 @@ head
 {
     margin-left: 2%;
 }
+#twitterFeed
+{
+    width: 12%;
+    float: left;
+}
+#getMeTheList
+{
+    border: solid 5px;
+    height: 500px;
+    width: 500px;
+    margin-left:25%;
+    float: left;
+    background-color: white;
+    padding: 1%;
+}
 
 #moreInformation
 {/*
     border: solid;*/
     padding: 2%;
-    float: left;
-}
-
-#twitterFeed
-{
-    border: solid lightblue;
-    padding: 2%;
-    width: 20%;
-    margin-left: 1%;
-    margin-bottom: 1%;
     float: left;
 }
 
