@@ -16,12 +16,12 @@ $(document).ready(function(){
     Rveggies = Math.floor(Math.random()*veggies.length);
     RRecipe = Math.floor(Math.random()*20)
 
-    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=0a0edc33&app_key=6090a8571c44c351bd3f1344244e9861';
+    var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=c087d9bf&app_key=6a40561f74f815bf63c05fb343000b4c';
 
     $.ajax({
         type: 'GET',
         url: url,
-        async: false,
+        async: true,
         contentType: "application/json",
         dataType: 'jsonp',
         success: function(results) {
@@ -31,7 +31,7 @@ $(document).ready(function(){
        }
 
       });//$.ajax({
-  }
+  };// function randomRecipe(){
 
 function checkRecipes(){
   if (recipesShown.length<7){
@@ -70,7 +70,7 @@ $('#randomizeNewlistBtn').click(function(){
     });
 
     repeatRecipe = setInterval(checkRecipes,5000);
-})
+  })
 
 $(document).on('click', '.recipeBoxes', function(){
 
@@ -115,22 +115,49 @@ $('#myNewListBtn').on('click', function(){
       }
       console.log(ingredientsArray)
     for (var i = 0; i < ingredientsArray.length; i++) {
-      $('#ingredient').append('<input type="checkbox" name="Grocery" value="'+ingredientsArray[i].food+'">'+ ingredientsArray[i].quantity+" "+ingredientsArray[i].measure+" : "+ingredientsArray[i].food+ '<br>');
-    }
-  });
+      var newDiv = $('<div>').addClass("IngDiv");
+      var ingredientDiv = ('<input type="checkbox" name="Grocery" value="'+ingredientsArray[i].food+'">'+ ingredientsArray[i].quantity+" "+ingredientsArray[i].measure+" : "+ingredientsArray[i].food+ '<br>');
+      newDiv.append(ingredientDiv);
+      $('#randomizedRecipes').append(newDiv);
 
-haveitems=[];
-dontHaveItems=[];
+    }
+  });//$('#myNewListBtn').on('click', function(){
+
+
+  haveitems=[];
+  dontHaveItems=[];
 
 $('#submitWunderlist').on('click', function(){
 
   $('input[type=checkbox]').each(function(){
-    if ($('input[type=checkbox]').is(':checked')){
-      console.log("checked");
-    console.log($(this).val());
+
+    if($(this).prop( "checked" )){
+      haveitems.push($(this).val());
     }else{
-    console.log("nothing clicked")
-  }//else
+      dontHaveItems.push($(this).val());
+    }//else
+    for (var i = 0; i < dontHaveItems.length; i++) {
+      text = dontHaveItems[i];
+      postURL = 'https://todoist.com/API/addItem?content='+text+'&project_id=154958188&priority=1&token=6ed67f409c850e92ac0ed6f7e25758f23f553553'
+      $.ajax({
+          type: 'GET',
+          url: postURL,
+          dataType: 'json  ',
+          // headers: { Access-Control-Allow-Origin:*, withCredentials: false},
+          success: function(results) {
+         }
+        });//$.ajax({
+
+};
 }); 
 });//$('#submitWunderlist').on('click', function(){
+
+  // var script = document.createElement('script');
+  // script.type = 'text/javascript';
+  // script.src = 'https://todoist.com/API/addItem?content='+text+'angel&project_id=154958188&priority=1&token=6ed67f409c850e92ac0ed6f7e25758f23f553553';
+  // document.getElementsByTagName('head')[0].appendChild(script);
+
+ 
+// key = "6ed67f409c850e92ac0ed6f7e25758f23f553553";
+
 }); //$(document).ready(function()
