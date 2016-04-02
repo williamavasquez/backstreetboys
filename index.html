@@ -13,7 +13,8 @@
     <!-- Firebase Reference -->
     <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
-    <!-- Moment.js Reference -->
+    <!-- Spinner.js Reference -->
+    <script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
     <!-- <script src="http://momentjs.com/downloads/moment.js"></script> -->    
      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
@@ -22,33 +23,19 @@
 </head>
 <body>
 
-<!-- Employee Tracker -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
-    </nav>
+
 
 <div class="container-fluid">
     <!-- Jumbotron -->
-    <div class="jumbotron">
-        <h1 class="text-center">7 recipe generator</h1>
-        <h3 class="text-center">A Comprehensive Directory of recipe generator</h3>
+    <div class="topJumbo">
+        <h1 class="text-center">7 Recipes</h1>
+        <h3 class="text-center">Easy Meal Planning for the Week</h3>
     </div>
     
     <div class="container">
         <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong>Random Recipes</strong></h3>
+            <div style="background-color: #eee;" class="panel-heading">
+                <h3 class="panel-title"><strong>Find Your Recipe</strong></h3>
             </div>
             <div class="panel-body">
                 <!-- drop down menu section -->
@@ -80,6 +67,12 @@
                </div></form>
                 </div>
                 <br>
+                <div id="myProgress">
+                  
+                </div>
+                <br>
+
+                <br>
                 <!-- this is the 7 image section -->
                 <div id="randomizedRecipes">
                     <!-- add divs here/ create 7 individual divs for each -->
@@ -88,42 +81,42 @@
                     <div id="image">
                         <!-- <div class='imagePlace'>
                         </div> -->
-                        <h4 id='dayM'>Monday</h4>
+                        
                     </div>
                     <!-- <br> -->
                     <div id="image">
                         <!-- <div class='imagePlace'>
                         </div> -->
-                        <h4 id='dayTu'>Tuesday</h4>
+                        
                     </div>
                     <!-- <br> -->
                     <div id="image">
                         <!-- <div class='imagePlace'>
                         </div> -->
-                        <h4 id='dayW'>Wednesday</h4>
+                        
                     </div>
                     <!-- <br> -->
                     <div id="image">
                         <!-- <div class='imagePlace'>
                         </div> -->
-                        <h4 id='dayTh'>Thursday</h4>
+                        
                     </div>
                     <!-- <br> -->
                     <div id="image">
                         <!-- <div class='imagePlace'>
                         </div> -->
-                        <h4 id='dayF'>Friday</h4>
+                        
                     </div>
                     <!-- <br> -->
                     <div id="image">
                         <!-- <div class='imagePlace'>
                         </div> -->
-                        <h4 id='daySa'>Saturday</h4>
+                        
                     </div>
                     <div id="image">
                        <!--  <div class='imagePlace'>
                         </div> -->
-                        <h4 id='daySu'>Sunday</h4>
+                        
                     </div>
                     <br>
                     <br>
@@ -188,8 +181,8 @@
                         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                             <!-- end of twitter feed -->
                 </div>
-            <div id='nonSense'>
-                <p id="coolKids"></p>
+            <div id='getMeTheList'>
+                
             </div>  
             <!-- end of more information -->
         </div>
@@ -213,5 +206,6 @@
         </div>
     </footer>
     <script src='js/testing.js'></script>
+    
 </body>
 </html>

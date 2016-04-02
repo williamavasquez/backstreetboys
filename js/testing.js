@@ -16,7 +16,9 @@ $(document).ready(function(){
     Rveggies = Math.floor(Math.random()*veggies.length);
     RRecipe = Math.floor(Math.random()*20)
 
+
     var url = 'https://api.edamam.com/search?q='+meats[Rmeat]+','+veggies[Rveggies]+'&from='+RRecipe+'&to='+(RRecipe+1)+'&app_id=0a0edc33&app_key=6090a8571c44c351bd3f1344244e9861';
+
 
     $.ajax({
         type: 'GET',
@@ -41,6 +43,7 @@ function checkRecipes(){
       }
     } else {
         recipesShown.splice(7,100);
+        spinner.stop();
         for (var i = 0; i < 7; i++) {
           RecipeOne=recipesShown[i];
           EXPR = "<img class='recipeSeven' src="+"'"+RecipeOne.image+"'>"; 
@@ -119,18 +122,69 @@ $('#myNewListBtn').on('click', function(){
     }
   });
 
+
 haveitems=[];
 dontHaveItems=[];
 
 $('#submitWunderlist').on('click', function(){
 
-  $('input[type=checkbox]').each(function(){
-    if ($('input[type=checkbox]').is(':checked')){
-      console.log("checked");
-    console.log($(this).val());
-    }else{
-    console.log("nothing clicked")
-  }//else
+ $('input[type=checkbox]').each(function(){
+
+   if($(this).prop( "checked" )){
+    $('#getMeTheList').append($(this));
+     console.log("Checked");
+   }else{
+     console.log("Not checked");
+ }//else
 }); 
-});//$('#submitWunderlist').on('click', function(){
+});//$('#subm
 }); //$(document).ready(function()
+
+// }); //$(document).ready(function()
+
+
+// // loading bar //
+// $(window).ready(function (){
+//    var spinner = new Spinner({
+//     lines: 12, // The number of lines to draw
+//     length: 7, // The length of each line
+//     width: 5, // The line thickness
+//     radius: 10, // The radius of the inner circle
+//     color: '#000', // #rbg or #rrggbb
+//     speed: 1, // Rounds per second
+//     trail: 100, // Afterglow percentage
+//     shadow: true // Whether to render a shadow
+//    }).spin(document.getElementById("#myProgress"));
+// })
+
+// spinner.js spin the spinning spinner spun span spong //
+console.log("spin span spun");
+var opts = {
+  lines: 13 // The number of lines to draw
+, length: 28 // The length of each line
+, width: 14 // The line thickness
+, radius: 42 // The radius of the inner circle
+, scale: 1 // Scales overall size of the spinner
+, corners: 1 // Corner roundness (0..1)
+, color: '#000' // #rgb or #rrggbb or array of colors
+, opacity: 0.25 // Opacity of the lines
+, rotate: 0 // The rotation offset
+, direction: 1 // 1: clockwise, -1: counterclockwise
+, speed: 1 // Rounds per second
+, trail: 60 // Afterglow percentage
+, fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
+, zIndex: 2e9 // The z-index (defaults to 2000000000)
+, className: 'spinner' // The CSS class to assign to the spinner
+, top: '67%' // Top position relative to parent
+, left: '50%' // Left position relative to parent
+, shadow: false // Whether to render a shadow
+, hwaccel: false // Whether to use hardware acceleration
+, position: 'absolute' // Element positioning
+}
+var target = document.getElementById('myProgress');
+var spinner = new Spinner(opts).spin(target);
+
+// // no more spinning, i'm going to throw up
+// setTimeout(function(){
+//   spinner.stop()}, 12000);
+

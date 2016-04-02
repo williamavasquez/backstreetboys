@@ -3,26 +3,56 @@
 	text-align: center;
 	padding: 5%;
 }
+body
+{
+    background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSuCI5mqUvj55ZaQE9hb7Pdi1McETN4CZMm9HFsdzvOyDxRi1JH');
+
+}
+head
+{
+
+}
+#footer
+{
+    background-color: white;
+  
+}
+
+#logo
+{
+    width: 3%;
+}
+
+.panel-primary
+{
+    margin-top:5%;
+}
+
+.panel-title
+{
+    color: black;
+}
+.topJumbo
+{
+    
+    color: white;
+}
 
 #myNewListBtn
 {
     margin-left: 2%;
 }
+#twitterFeed
+{
+    width: 12%;
+    float: left;
+}
+
 
 #moreInformation
 {/*
     border: solid;*/
     padding: 2%;
-    float: left;
-}
-
-#twitterFeed
-{
-    border: solid lightblue;
-    padding: 2%;
-    width: 20%;
-    margin-left: 1%;
-    margin-bottom: 1%;
     float: left;
 }
 
@@ -56,42 +86,6 @@
 margin: 0 10px;
 }
 
-
-#dayM
-{
-    float:left;
-    margin-left:5%;
-}
-#dayTu
-{
-    float:left;
-    margin-left:7%;
-}
-#dayW
-{
-    float:left;
-    margin-left:6%;
-}
-#dayTh
-{
-    float:left;
-    margin-left:5%;
-}
-#dayF
-{
-    float:left;
-    margin-left:7%;
-}
-#daySa
-{
-    float:left;
-    margin-left:8%;
-}
-#daySu
-{
-    float:left;
-    margin-left:7%;
-}
 #formOne
 {
     float: left;
@@ -103,16 +97,10 @@ margin: 0 10px;
     margin-left: 31%;
 }
 
-
-
-#footer
-{
-    background-color: lightblue;
-}
-
 .container
 {
     text-align: center;
+
 }
 
 h2 {
