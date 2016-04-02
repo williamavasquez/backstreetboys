@@ -119,7 +119,7 @@ $('#myNewListBtn').on('click', function(){
       console.log(ingredientsArray)
     for (var i = 0; i < ingredientsArray.length; i++) {
          var newDiv = $('<div>').addClass("IngDiv");
-         var ingredientDiv = ('<input type="checkbox" name="Grocery" value="'+ingredientsArray[i].food+'">'+ ingredientsArray[i].quantity+" "+ingredientsArray[i].measure+": "+ingredientsArray[i].food+ '<br>' + " ").toUpperCase();
+         var ingredientDiv = ('<input type="checkbox" name="Grocery" value= "'+ingredientsArray[i].food+'"> ' + ingredientsArray[i].quantity +" "+ingredientsArray[i].measure+": "+ingredientsArray[i].food + '<br>' + '<br>' + " ").toUpperCase();
          newDiv.append(ingredientDiv);
          $('#ingredient').append(newDiv);
 
