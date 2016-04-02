@@ -7,78 +7,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
     <!-- CSS STYLE SHEET -->
         <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- Firebase Reference -->
-    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
-    <!-- Moment.js Reference -->
+    <!-- Spinner.js Reference -->
+    <script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
     <!-- <script src="http://momentjs.com/downloads/moment.js"></script> -->    
      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
      <!-- javascript script -->
     <script src="game.js"></script>
 </head>
 <body>
-
-<!-- Employee Tracker -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
-    </nav>
-
 <div class="container-fluid">
     <!-- Jumbotron -->
-    <div class="jumbotron">
-        <h1 class="text-center">7 recipe generator</h1>
-        <h3 class="text-center">A Comprehensive Directory of recipe generator</h3>
+    <div class="topJumbo">
+        <h1 class="text-center">7 Recipes</h1>
+        <h3 class="text-center">Easy Meal Planning for the Week</h3>
     </div>
     
     <div class="container">
         <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong>Random Recipes</strong></h3>
+            <div style="background-color: #eee;" class="panel-heading">
+                <h3 class="panel-title"><strong>Find Your Recipe</strong></h3>
             </div>
             <div class="panel-body">
                 <!-- drop down menu section -->
-
                 <!-- redo drop down menu -->
-
-               <form id='formOne' name="myform"><div align="center"> 
-               <select name="optone" size="1" 
-               onchange="setOptions(document.myform.optone.options[document.myform.optone.selectedIndex].value);">
-               <!-- <option value=" " selected="selected"> </option>  -->
-               <option value="1" selected="selected" >Time Restrictions</option>  
-               </select><br /> <br /> 
-               <select name="opttwo" size="1"> 
-               <option value=" " selected="selected">Please select one of the options above first</option> 
-               </select> 
-               <!-- <input type="button" name="go" value="Submit"> --> 
-               </div></form>
-            
-               <form id='formTwo' name="myformtwo"><div align="center"> 
-               <select name="optoneanother" size="1" 
-               onchange="setOptions(document.myformtwo.optoneanother.options[document.myformtwo.optoneanother.selectedIndex].value);">
-               <!-- <option value=" " selected="selected"> </option>  -->
-               <option value="1" selected="selected" >Diet Restrictions</option>  
-               </select><br /> <br /> 
-               <select name="opttwoanother" size="1"> 
-               <option value=" " selected="selected">Please select one of the options above first</option> 
-               </select> 
-               <!-- <input type="button" name="go" value="Submit">  -->
-               </div></form>
+              
                 </div>
+                <br>
+                <div id="myProgress">
+                  
+                </div>
+                <br>
                 <br>
                 <!-- this is the 7 image section -->
                 <div id="randomizedRecipes">
@@ -88,123 +49,67 @@
                     <div id="image">
                         <!-- <div class='imagePlace'>
                         </div> -->
-                        <h4 id='dayM'>Monday</h4>
+                        
                     </div>
-                    <!-- <br> -->
-                    <div id="image">
-                        <!-- <div class='imagePlace'>
-                        </div> -->
-                        <h4 id='dayTu'>Tuesday</h4>
-                    </div>
-                    <!-- <br> -->
-                    <div id="image">
-                        <!-- <div class='imagePlace'>
-                        </div> -->
-                        <h4 id='dayW'>Wednesday</h4>
-                    </div>
-                    <!-- <br> -->
-                    <div id="image">
-                        <!-- <div class='imagePlace'>
-                        </div> -->
-                        <h4 id='dayTh'>Thursday</h4>
-                    </div>
-                    <!-- <br> -->
-                    <div id="image">
-                        <!-- <div class='imagePlace'>
-                        </div> -->
-                        <h4 id='dayF'>Friday</h4>
-                    </div>
-                    <!-- <br> -->
-                    <div id="image">
-                        <!-- <div class='imagePlace'>
-                        </div> -->
-                        <h4 id='daySa'>Saturday</h4>
-                    </div>
-                    <div id="image">
-                       <!--  <div class='imagePlace'>
-                        </div> -->
-                        <h4 id='daySu'>Sunday</h4>
-                    </div>
+                   
                     <br>
                     <br>
-                    <button id='randomizeNewlistBtn'>Randomize</button>
-                    <button id='myNewListBtn'>Get me the list</button>
+                 
+                    
                     <!-- end of images -->
                 </div>
-
-                <!-- here is where the ingredients will go  -->
-                    <div id="ingredient"></div>
-                    <button id='submitWunderlist'>pass to wunderlist</button>
-
-                <!-- end of ingredient list -->
-
-                <!-- start of modal content -->
-                <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+                    <button id='randomizeNewlistBtn'>Randomize</button>
+                    <a href="list.html">
                     
-                      <!-- Modal content-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Modal Header</h4>
-                        </div>
-                        <div class="modal-body">
-                          <p>Some text in the modal.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                      
+                    <button id='transfer'>Gather your ingredients</button>
+                </a>
+                <!-- <button id='myNewListBtn'>Get me the list</button> -->
+                <br>
+                <br>
+                
+                <!-- here is where the ingredients will go  -->
+                 <!--    <div id="ingredient">
                     </div>
-                    <!-- end of modal content -->
-                  </div>
-
+                    <button id='submitWunderlist'>pass to wunderlist</button> -->
+                <!-- end of ingredient list -->
             </div>
         </div>
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                            
-                              <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Modal Header</h4>
-                                </div>
-                                <div class="modal-body">
-                                  <p>Some text in the modal.</p>
-                                </div>
-                            <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-                              
-            </div>
-        </div>             <!-- end of modal content -->
-        </div>
+       <!--  <div id="ingredient">
+          
+        </div> -->
+       
         <div id='moreInformation'>
-            <!-- twitter feed -->
-                <div id='twitterFeed'>
-                    <a class="twitter-timeline" href="https://twitter.com/RecipesSeven" data-widget-id="713759374565453824">Tweets by @RecipesSeven</a>
-                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                            <!-- end of twitter feed -->
-                            
-                            <!-- twitter feed -->
-                            <a class="twitter-timeline" href="https://twitter.com/My_Recipes" data-widget-id="716060361863127040">Tweets by @My_Recipes</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-<!-- end of twitter feed -->
-                <!-- twitter feed -->
-               
-                <a class="twitter-timeline" href="https://twitter.com/jamieoliver" data-widget-id="716112264567382016">Tweets by @jamieoliver</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-                <!-- end of twitter feed -->
+                    <!-- twitter feed -->
+            <div id='twitterFeed'>
+                <a class="twitter-timeline" href="https://twitter.com/RecipesSeven" data-widget-id="713759374565453824">Tweets by @RecipesSeven</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                    <!-- end of twitter feed -->
+                                    
+                                    <!-- twitter feed -->
+                <a class="twitter-timeline" href="https://twitter.com/My_Recipes" data-widget-id="716060361863127040">Tweets by @My_Recipes</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                 
-                </div>
-                
-            <div id='nonSense'>
-                <p id="coolKids"></p>
-            </div>  
-            <!-- end of more information -->
+                        <!-- twitter feed Two-->
+                       
+              
+                        
+            </div>
+                <div id='getMeTheList'>
+                         
+                </div>  
+                    <!-- end of more information -->
         </div>
     </div>
 </div>
@@ -212,6 +117,7 @@
     #footer
     ========================== -->
     <footer id="footer">
+        <div class="container">
             <a href="https://www.github.com">
             <img id='logo' src="images/githubLogo.png">
             </a>
@@ -221,9 +127,10 @@
             <a href="https://www.twitter.com">
             <img id='logo' src="images/twitterLogo.png">
             </a>
-            <p> We are 7 Recipes</p>
+            <p style="color: white;">7Recipes Inc</p>
         </div>
     </footer>
     <script src='js/testing.js'></script>
+    
 </body>
 </html>
