@@ -4,13 +4,14 @@ body {
   /* Remove the navbar's default margin-bottom and rounded borders */
   .navbar {
     margin-bottom: 0;
-    border-radius: 0;
+    border-radfdsafdsafdsius: 0;
     background-color: black;
     color: white;
   }
 
   /* Add a gray background color and some padding to the footer */
   footer {
+    position: relative;
     background-color: black;
     padding: 25px;
     color: white;
