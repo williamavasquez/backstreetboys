@@ -1,0 +1,54 @@
+body {
+  background-color: lightblue;
+}
+  /* Remove the navbar's default margin-bottom and rounded borders */
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: black;
+    color: white;
+  }
+
+  /* Add a gray background color and some padding to the footer */
+  footer {
+    background-color: black;
+    padding: 25px;
+    color: white;
+  }
+
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    min-height:200px;
+}
+
+.col-md-3.col-md-offset-3 {
+  border-style: solid;
+  background-color: black;
+  color: white;
+  margin-left: 17%;
+  margin-top: 5%;
+  padding: 5%;
+}
+
+#signUp {
+  background-color: grey;
+  color: white;
+  width:10%;
+  padding: 1%;
+  margin-left: 45%;
+  margin-bottom:1%;
+}
+
+/*.row{
+  border-style: solid;
+  background-color: black;
+  color: white;
+}*/
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none;
+  }
+}
