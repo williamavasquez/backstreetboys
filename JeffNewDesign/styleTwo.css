@@ -1,36 +1,3 @@
-body {
-  background-color: lightblue;
-}
-  /* Remove the navbar's default margin-bottom and rounded borders */
-  .navbar {
-    margin-bottom: 0;
-    border-radfdsafdsafdsius: 0;
-    background-color: black;
-    color: white;
-  }
-
-  /* Add a gray background color and some padding to the footer */
-  footer {
-    position: relative;
-    background-color: black;
-    padding: 25px;
-    color: white;
-  }
-
-.carousel-inner img {
-    width: 100%; /* Set width to 100% */
-    margin: auto;
-    min-height:200px;
-}
-
-.col-md-3.col-md-offset-3 {
-  border-style: solid;
-  background-color: black;
-  color: white;
-  margin-left: 17%;
-  margin-top: 5%;
-  padding: 5%;
-}
 
 #signUpBtn {
   background-color: grey;
@@ -117,7 +84,7 @@ body {
     text-align: center;
 }
 #signInText {
-  float: left;
+  float: center;
 }
 #forgotPassword {
   background:none;
