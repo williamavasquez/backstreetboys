@@ -66,7 +66,7 @@
 
 .modal-header {
     padding: 2px 16px;
-    background-color: lightblue;
+    background-color: #ADD8E6;
     color: white;
     text-align: center;
 }
@@ -100,16 +100,61 @@
   padding:1%;
   margin:1%;
 }
+.tabs {
+    width:100%;
+    display:inline-block;
+}
 
-/*.signUpForm {
+    /*----- Tab Links -----*/
+    /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
 
-}*/
-/*.row{
-  border-style: solid;
-  background-color: black;
-  color: white;
-}*/
+    .tab-links li {
+        margin:0px 5px;
+        float:right;
+        list-style:none;
+    }
 
+        .tab-links a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#7FB5DA;
+            font-size:16px;
+            font-weight:600;
+            color:#4c4c4c;
+            transition:all linear 0.15s;
+        }
+
+        .tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+
+    li.active a, li.active a:hover {
+        background:#fff;
+        color:#4c4c4c;
+    }
+
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding:15px;
+        border-radius:3px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+        background:#fff;
+    }
+
+        .tab {
+            display:none;
+        }
+
+        .tab.active {
+            display:block;
+        }
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
   .carousel-caption {
