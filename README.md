@@ -1,16 +1,16 @@
-#7 Recipes (food for your week) 
+#7 Recipes (Food For the Week) 
 
 ##Synopsis:
 
-Get a recipe for each day of the week, we build a groceries list with all the ingridients. choose what you have and don't. Go to the grocery store with the list in your pocket (todolist) or buy it all with one click at peadpod
+7 Recipes is a web app that randomizes recipes for each day of the week. Consumers have the option to randomize and delete recipes based on their dietary needs. The web app aggregates all of the ingredients (by respective item and quantity) for the entire week and sends the shopping list to Todoist (a to do list and task web/mobile app) making meal planning, grocery shopping, and cooking easy.
 
 
 ##Contributors:
 
-- Jeff Jeffreyyourman
-- Frankie FrankBeatrice
-- Angel angelica3010
-- William williamavasquez
+- Jeff Yourman:  Jeffreyyourman
+- Frankie Beatrice: FrankBeatrice
+- Angel Trinh: angelica3010
+- William Vasquez: williamavasquez
 
 
 ##Technologies used:
@@ -26,12 +26,8 @@ Get a recipe for each day of the week, we build a groceries list with all the in
 ###APIs
 
 Todoist API
-Yummly API
-AmazonFresh API
+Edaman API
 
-##Code We're proud of
-
-We are excited to use this application on our daily lives, this is something we need
 
 
 License
