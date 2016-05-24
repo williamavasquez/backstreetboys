@@ -1,6 +1,6 @@
-#7 Recipes (Food For the Week) 
+#7 Recipes (Meal Plan Recipe Generator) 
 
-##Synopsis:
+##Overview:
 
 7 Recipes is a web app that randomizes recipes for each day of the week. Consumers have the option to randomize and delete recipes based on their dietary needs. The web app aggregates all of the ingredients (by respective item and quantity) for the entire week and sends the shopping list to Todoist (a to do list and task web/mobile app) making meal planning, grocery shopping, and cooking easy.
 
