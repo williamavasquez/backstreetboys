@@ -28,8 +28,3 @@
 Todoist API
 Edaman API
 
-
-
-License
-
-MIT License. Copyright 2009-2016 Rutgers Coding Bootcamp.
