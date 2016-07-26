@@ -25,5 +25,5 @@
 
 ###APIs
 
--Todoist API
--Edaman API
+- Todoist API
+- Edaman API
